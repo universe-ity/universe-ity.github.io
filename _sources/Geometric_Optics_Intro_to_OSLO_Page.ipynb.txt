@@ -1,0 +1,518 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Geometric Optics Intro to OSLO.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "toc_visible": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "r0SyNWdWvi3i",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Introduction to OSLO"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "nuUSvwByvuTV",
+        "colab_type": "text"
+      },
+      "source": [
+        "OSLO requires a complete description of the optical system through a set of parameters which are organized into the Surface Data Spreadsheet (`Lens > Surface Data Spreadsheet`).\n",
+        "\n",
+        "![Surface Data Table](https://drive.google.com/uc?export=view&id=1_4H8KakYv4dEVJrgRIeAkPsUy6WGa5AJ)\n",
+        "\n",
+        " Each row of the table describes a different surface and each column within represents a specific property of that surface. Each column headers has a  precise meaning. It is important that the correct values are entered into OSLO in order for the results to best match those of the desired optical system. It is thus imperative that steps be taken to properly determine and verify the correct inputs for the columns. The suggested series of steps to follow for those just getting started with OSLO are,\n",
+        "\n",
+        "\n",
+        "**STEPS**\n",
+        "\n",
+        "1.   Sketch the Optical System (*on paper!*)\n",
+        "2.   Find the Vertex for each surface\n",
+        "3.   Find the Curvature of each surface\n",
+        "4.   Find the Distance to next surface\n",
+        "5.   Find the Height of each surface\n",
+        "6.   Find the Material to next surface\n",
+        "7.   Tabulate the result\n",
+        "\n",
+        "Additional steps may also be needed such as,\n",
+        "\n",
+        "8.   Setting the index of refraction\n",
+        "9.   Changing the object size\n",
+        "10.  Forcing OSLO to draw surface(s)\n",
+        "11.  Changing the rays that are drawn\n",
+        "\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZQ_vrN4MJcRw",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 1. Sketch the optical system"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "sANtwcYMJnm_",
+        "colab_type": "text"
+      },
+      "source": [
+        "The first step in understanding OSLO will be to understand the numbers and values it is asking for. To do this, sketch out a simple object-lens-image diagram similar to what is shown below *on paper.* \n",
+        "\n",
+        "![Setup sketch](https://omlc.org/classroom/oslotut/simple/sketch.png)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "skPahaJgJoxN",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 2. Find the Vertex for each surface"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "UVyYUuHgJci-",
+        "colab_type": "text"
+      },
+      "source": [
+        "Start off by identifying each vertex in the surface, and marking each with a vertical line where each surface crosses the optical axis. These vertical lines will be used to gauge distances from each surface.\n",
+        "\n",
+        "![Vertices](https://omlc.org/classroom/oslotut/simple/vertices.png)\n",
+        "\n",
+        "Label the object on the left with \"OBJ\", and the image on the right with \"IMS\". Normally one would label the left side of the lens with a \"1\" and the right side of the lens with a \"2\".\n",
+        "\n",
+        "![Vertices labeled](https://omlc.org/classroom/oslotut/simple/vertices-labelled.png)\n",
+        "\n",
+        "However, OSLO does not follow the normal labelling convention. Instead, one surface, either \"1\" or \"2\" will always be the aperature stop, or \"AST\". In this system, the left side of the lens, what normally would've been labelled as \"1\", will be labeled \"AST\" instead. The other keeps the conventional label of \"2.\"\n",
+        "\n",
+        "![Vertices labeled OSLO](https://omlc.org/classroom/oslotut/simple/vertices-labelled-2.png)\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "HrpkP2nFJct7",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 3. Find the curvature of each surface\n",
+        "Using the Lens Maker's formula at the beginning of this section, the radius of curvature $r$ for a bi-convex lens, assuming both surfaces have the same curvature ($r=|r_1|=|r_2|$), is \n",
+        "\n",
+        "$$r = \\frac{f}{2(n-1)}$$ \n",
+        "\n",
+        "<div class=\"alert alert-info\">\n",
+        "\n",
+        "Note\n",
+        "\n",
+        "You should verify this result!\n",
+        "\n",
+        "</div>\n",
+        "\n",
+        "OSLO defines positive radii as those with a center to the right of the vertex:\n",
+        "\n",
+        "![https://omlc.org/classroom/oslotut/simple/curvature1.png](https://omlc.org/classroom/oslotut/simple/curvature1.png)\n",
+        "\n",
+        "OSLO defines negative radii as those with a center to the left of the vertex:\n",
+        "\n",
+        "![https://omlc.org/classroom/oslotut/simple/curvature2.png](https://omlc.org/classroom/oslotut/simple/curvature2.png)\n",
+        "\n",
+        "**IMPORTANT:** The object and image surfaces also have radii of curvatures. Since they are flat, their curvatures are that of a circle that is infinitely large and thus their curvatures are infinite. OSLO allows one to write 0 to represent infinity for radius of curvature.\n",
+        "\n",
+        "Altogether, the sketch should look like,\n",
+        "\n",
+        "![OBJ distance](https://omlc.org/classroom/oslotut/simple/curvature4.png)\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ILCmIRRGgkP8",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 4. Find the distance to the next surface\n",
+        "        \n",
+        " The object distance also doesnt follow convention; what is measured, instead, is the distance to the <i>next</i> surface.  The object (OBJ) distance is represented below by $d_{OBJ}$ ,\n",
+        "\n",
+        "![OBJ distance](https://omlc.org/classroom/oslotut/simple/distance1.png)\n",
+        "\n",
+        " The distance of the first surface (the AST surface) is the thickness of the lens from vertex to vertex  \n",
+        "\n",
+        "![AST distance](https://omlc.org/classroom/oslotut/simple/distance2.png)\n",
+        "\n",
+        " The distance for the second surface is the length to the image surface.  OSLO will calculate this distance. \n",
+        "\n",
+        "![surface 2 distance](https://omlc.org/classroom/oslotut/simple/distance3.png)\n",
+        "\n",
+        "Adding these distances to the table describing the single lens system:  \n",
+        "\n",
+        "<table>\n",
+        "  <tr>\n",
+        "    <th>Surface</th>\n",
+        "    <th>Curvature</th>\n",
+        "    <th>Distance</th>\n",
+        "    <th>Height</th>\n",
+        "    <th>Material</th>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>OBJ</td>\n",
+        "    <td>0</td>\n",
+        "    <td class=\"new\">$D_{OBJ}$</td>\n",
+        "    <td></td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>AST</td>\n",
+        "    <td>$R_{AST}$</td>\n",
+        "    <td class=\"new\">$D_{AST}$</td>\n",
+        "    <td></td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>2</td>\n",
+        "    <td>$R_2$</td>\n",
+        "    <td class=\"new\">$D_2$</td>\n",
+        "    <td></td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>IMS</td>\n",
+        "    <td>0</td>\n",
+        "    <td class=\"new\">(calc)</td>\n",
+        "    <td></td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "</table>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8IaBzsLygkP8",
+        "colab_type": "text"
+      },
+      "source": [
+        "##  5. Find the height of each surface (from the optical axis)\n",
+        "\n",
+        "This involves determining\n",
+        "the height of the object from the optical axis (or its radius).  The object (OBJ) height is  \n",
+        "\n",
+        "![Obj height](https://omlc.org/classroom/oslotut/simple/heights1.png)\n",
+        "\n",
+        "The height of the first surface (the AST surface) is  \n",
+        "\n",
+        "![First surface height](https://omlc.org/classroom/oslotut/simple/heights2.png)\n",
+        "\n",
+        "The height of the second surface should be the height of the previous surface\n",
+        "\n",
+        "![Second surface height](https://omlc.org/classroom/oslotut/simple/heights3.png)\n",
+        "\n",
+        "The height of the image surface can be left blank. OSLO will calculate it for you.  \n",
+        "\n",
+        "![Calculated image height](https://omlc.org/classroom/oslotut/simple/heights4.png)\n",
+        "\n",
+        "Again, adding these heights into the optical system table:  \n",
+        "\n",
+        "\n",
+        "<table>\n",
+        "  <tr>\n",
+        "    <th>Surface</th>\n",
+        "    <th>Curvature</th>\n",
+        "    <th>Distance</th>\n",
+        "    <th>Height</th>\n",
+        "    <th>Material</th>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>OBJ</td>\n",
+        "    <td>0</td>\n",
+        "    <td>$D_{OBJ}$</td>\n",
+        "    <td class=\"new\">$h_{OBJ}$</td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>AST</td>\n",
+        "    <td>$R_{AST}$</td>\n",
+        "    <td>$D_{AST}$</td>\n",
+        "    <td class=\"new\">$h_{AST}$</td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>2</td>\n",
+        "    <td>$R_2$</td>\n",
+        "    <td>$D_2$</td>\n",
+        "    <td class=\"new\">$h_2$</td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>IMS</td>\n",
+        "    <td>0</td>\n",
+        "    <td>(calc)</td>\n",
+        "    <td class=\"new\">(calc)</td>\n",
+        "    <td></td>\n",
+        "  </tr>\n",
+        "</table>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9bzUeYhIgkP8",
+        "colab_type": "text"
+      },
+      "source": [
+        "##  6. Find the material to next surface\n",
+        "\n",
+        "The material for each surface is the material that comes **after** \n",
+        "the surface.  Thus, in our case, the material for the OBJ surface is just air.\n",
+        "\n",
+        "![OBJ medium](https://omlc.org/classroom/oslotut/simple/medium1.png)\n",
+        "\n",
+        "The material for the next surface (the AST surface) is the glass that the lens\n",
+        "is made from \n",
+        "\n",
+        "![AST medium](https://omlc.org/classroom/oslotut/simple/medium2.png)\n",
+        "\n",
+        "The material for the next surface is air again!\n",
+        "\n",
+        "![2 medium](https://omlc.org/classroom/oslotut/simple/medium3.png)\n",
+        "\n",
+        "So, the table describing the optical system is \n",
+        "\n",
+        "\n",
+        "<table>\n",
+        "  <tr>\n",
+        "    <th>Surface</th>\n",
+        "    <th>Curvature</th>\n",
+        "    <th>Distance</th>\n",
+        "    <th>Height</th>\n",
+        "    <th>Material</th>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>OBJ</td>\n",
+        "    <td>0</td>\n",
+        "    <td>$D_{OBJ}$</td>\n",
+        "    <td>$h_{OBJ}$</td>\n",
+        "    <td class=\"new\">air</td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>AST</td>\n",
+        "    <td>$R_{AST}$</td>\n",
+        "    <td>$D_{AST}$</td>\n",
+        "    <td>$h_{AST}$</td>\n",
+        "    <td class=\"new\">glass</td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>2</td>\n",
+        "    <td>$R_2$</td>\n",
+        "    <td>$D_2$</td>\n",
+        "    <td>$h_2$</td>\n",
+        "    <td class=\"new\">air</td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>IMS</td>\n",
+        "    <td>0</td>\n",
+        "    <td>(calc)</td>\n",
+        "    <td>(calc)</td>\n",
+        "    <td class=\"new\">air</td>\n",
+        "  </tr>\n",
+        "</table>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "apP6LMmxgkP9",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 7. Start using the OSLO names\n",
+        "\n",
+        "OSLO uses different names for each column.  OSLO's names kind of make sense, although they can be confusing for some.  For example, \"height\" becomes \"APERTURE RADIUS.\"  \n",
+        "\n",
+        "\n",
+        "<table>\n",
+        "  <tr>\n",
+        "    <th>SRF</th>\n",
+        "    <th>RADIUS</th>\n",
+        "    <th>THICKNESS</th>\n",
+        "    <th>APERTURE RADIUS</th>\n",
+        "    <th>GLASS</th>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>OBJ</td>\n",
+        "    <td>0</td>\n",
+        "    <td>$D_{OBJ}$</td>\n",
+        "    <td>$h_{OBJ}$</td>\n",
+        "    <td class=\"new\">air</td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>AST</td>\n",
+        "    <td>$R_{AST}$</td>\n",
+        "    <td>$D_{AST}$</td>\n",
+        "    <td>$h_{AST}$</td>\n",
+        "    <td class=\"new\">glass</td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>2</td>\n",
+        "    <td>$R_2$</td>\n",
+        "    <td>$D_2$</td>\n",
+        "    <td>$h_2$</td>\n",
+        "    <td class=\"new\">air</td>\n",
+        "  </tr>\n",
+        "  <tr>\n",
+        "    <td>IMS</td>\n",
+        "    <td>0</td>\n",
+        "    <td>(calc)</td>\n",
+        "    <td>(calc)</td>\n",
+        "    <td class=\"new\">air</td>\n",
+        "  </tr>\n",
+        "</table>\n",
+        "\n",
+        "Open a new lens file in OSLO. The `Surface Data` window will look like this.  The headings are the same as the ones above.\n",
+        "\n",
+        "![oslo start](https://omlc.org/classroom/oslotut/simple/oslostart.png)\n",
+        "\n",
+        "Notice that one surface (row) is missing.  There are many ways to add rows, but the simplest is to select the image surface row (by clicking on the `IMS` button) and typing Ctrl+I.\n",
+        "\n",
+        "![oslo start](https://omlc.org/classroom/oslotut/simple/oslostart2.png)\n",
+        "\n",
+        "And now it is just a matter of entering the data previously gathered in the table above into the new Surface Data Window. "
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bQbb2v6NQW4_",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 8. Setting the index of refraction"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "x3yBfV7qaO1o",
+        "colab_type": "text"
+      },
+      "source": [
+        "\n",
+        "Instead of using a real glass with chromatic dispersion, it may be more useful to have a single index such as $n=1.5$.\n",
+        "\n",
+        "Specifically this means that the first surface `AST` should have an index of refraction of 1.5.  To do this, click on the button in the glass column of the `AST` line.  Select `Direct...` from the pop-up menu and you'll see\n",
+        "\n",
+        "![Refractive Index](https://omlc.org/classroom/oslotut/simple/xrefractive-index.png)\n",
+        "\n",
+        "after the refractive index at each wavelength is changed to 1.5.  Click the green check box in the upper left hand corner of the dialog box and the `Surface Data` spreadsheet should look like\n",
+        "\n",
+        "![starting data](https://omlc.org/classroom/oslotut/simple/xfirst-try.png)\n",
+        "\n",
+        "The three wavelength are traditional optical design wavelengths and correspond to easily obtained [Fraunhofer emission lines](https://en.wikipedia.org/wiki/Fraunhofer_lines) for green, blue, and red light.\n",
+        "\n",
+        "<table>\n",
+        "    <tr><td>Helium</td><td> d-line</td><td>587.56nm</td><td>Green</td></tr>\n",
+        "    <tr><td>Hydrogen</td><td> F-line</td><td>486.13nm</td><td>Blue</td></tr>\n",
+        "    <tr><td>Hydrogen</td><td> C-line</td><td>656.27nm</td><td>Red</td></tr>\n",
+        "</table>\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_MRWGPIfirtV",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 9. Changing the object size"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5Zsj2m1dizay",
+        "colab_type": "text"
+      },
+      "source": [
+        "The object height (`APERTURE RADIUS`) cannot be changed just by clicking and entering the object height.  Instead, the height is changed by clicking the `Setup` button in the `Surface Data` window.  The place to enter the desired height is highlighted below,\n",
+        "\n",
+        "![height dialog](https://omlc.org/classroom/oslotut/simple/xobject.png)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mvADH0mke8FR",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 10. Forcing OSLO to draw surface"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "RYNMrZQhfJOO",
+        "colab_type": "text"
+      },
+      "source": [
+        "To force OSLO to show a surface, one uses the button in the `SPECIAL` column. In the row corresponding to the surface that needs to be drawn, click the button under the `SPECIAL` column and navigate to `Surface Control (F) -> General` to get the following dialog box\n",
+        "\n",
+        "![curvature AST](https://omlc.org/classroom/oslotut/simple/xcontrol.png)\n",
+        "\n",
+        "Change the appearance from `Automatic` to `Drawn`."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Ht7TqSkGkp-w",
+        "colab_type": "text"
+      },
+      "source": [
+        "## 11. Changing the rays that are drawn\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "vOBK8RZdkqZ5",
+        "colab_type": "text"
+      },
+      "source": [
+        "What if the desire is to trace a bunch of rays from the top of the object?  To do this, go to the `Lens` menu and select `Lens Drawing Conditions ...` to get the following dialog box.  \n",
+        "\n",
+        "![data with height](https://omlc.org/classroom/oslotut/simple/xdata6.png)\n",
+        "\n",
+        "By changing boxes in yellow, a drawing that draws seven rays from the top of the object such as the following can be obtained\n",
+        "\n",
+        "![7 rays](https://drive.google.com/uc?export=view&id=1e1oYewKZlt2EQoW-O4TNm7HRKr_UvMQo)"
+      ]
+    }
+  ]
+}

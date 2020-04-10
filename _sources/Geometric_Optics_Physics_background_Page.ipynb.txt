@@ -1,0 +1,121 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Physics background.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "n5zb9bOK0qtD",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Background"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "sRFhIYn7-Nra",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Lens Maker's formula"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ikk8W8JS-a5f",
+        "colab_type": "text"
+      },
+      "source": [
+        "The Lensmaker's formula is derived in Young and Freedman. For thin lens in vacuum,\n",
+        "\n",
+        "$$ \\frac{1}{f} = (1-n)\\left[ \\frac{1}{r_1} - \\frac{1}{r_2} \\right]$$\n",
+        "\n",
+        "where $f$ is the *focal length*, $r$ is the radius of curvature, and $n$ is the refractive index."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Lk1bOm146ckP",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Gaussian object/image formula "
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "BIGPqRcT-Ma4",
+        "colab_type": "text"
+      },
+      "source": [
+        "The Gaussian object/image formula, often known as the Thin Lens equation, is one of the more simple and straight forward equations in geometric optics. This equation can apply to both positive and negative lenses, and can calculate whether an image will be real or virtual. In the equation (shown below) $f$ represents the focus length of the lens, $o$ represents the distance from the object to the lens, and $i$ represents the distance from the lens to the image.\n",
+        "\n",
+        "$$ \\frac{1}{f} = \\frac{1}{o} + \\frac{1}{i}$$\n",
+        "\n",
+        "where $i$ is positive for a real image and negative for a virtual image."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1xQB1Vy8HN9w",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Transverse magnification formula"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "jHL4qgCgHTsN",
+        "colab_type": "text"
+      },
+      "source": [
+        "The transverse magnification (or linear magnification) is the ratio of the image size to the object size. If the image and object are in the same medium, the magnification becomes just the image distance divided by the object distance. \n",
+        "\n",
+        "$$ m = \\frac{h_i}{h_o} = -\\frac{i}{o}$$\n",
+        "\n",
+        "where $h_o$ is the object size and $h_i$ is the image size."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZHRbsc8F5F_x",
+        "colab_type": "text"
+      },
+      "source": [
+        "## How lenses are made"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1rYZzq865Ew4",
+        "colab_type": "text"
+      },
+      "source": [
+        "The optical glass used to make lenses like those found in cameras is supplied to lens manufacturers by specialized vendors. Usually, these venders provide sliced glass plates called a \"pressed plates\" which are then grinded into the desired lens shape. First, the plates are shaped to concave or convex forms by a curve generator machine whose function is a first-step grinder. To reach its exact shape, a lens goes through a sequence of stages in which it is ground by polishing particles in water. The polishing particles become smaller in each stage as the lens is refined. An important characteristic of the lens produced is that it is centered so that the outer edge of the lens is perfect in circumference relative to the optical axis of the lens. Lenses made of plastic or bonded glass and resin are produced by the similar processes.\n",
+        "\n",
+        "Read more [here](http://www.madehow.com/Volume-2/Camera-Lens.html#ixzz6IsWtzNzc)."
+      ]
+    }
+  ]
+}
