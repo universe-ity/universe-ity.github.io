@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Index</title>
+      <title>More with OSLO</title>
     
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
@@ -28,8 +27,10 @@
       <script src="_static/theme-vendors.js"></script>
       <script src="_static/theme.js" defer></script>
     
-  <link rel="index" title="Index" href="#" />
-  <link rel="search" title="Search" href="search.html" /> 
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Activities (Week 1)" href="Geometric_Optics_Activities_Page.html" />
+  <link rel="prev" title="Introduction to OSLO" href="Geometric_Optics_Intro_to_OSLO_Page.html" /> 
   </head>
 
   <body>
@@ -78,7 +79,7 @@
       <p class="caption">
         <span class="caption-text"><a href="index.html#geometric-optics-with-oslo">Contents:</a></span>
       </p>
-      <ul class="">
+      <ul class="current">
         
           <li class="toctree-l1 "><a href="Geometric_Optics_Introduction_Page.html" class="reference internal ">Introduction</a>
 
@@ -110,8 +111,14 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="Geometric_Optics_More_with_OSLO_Page.html" class="reference internal ">More with OSLO</a>
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">More with OSLO</a>
 
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Aspherical-surface" class="reference internal">Aspherical surface</a></li>
+                
+              </ul>
             
           </li>
 
@@ -146,28 +153,57 @@
   <ul class="breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
     
-    <li>Index</li>
+    <li>More with OSLO</li>
   </ul>
   
 
   <ul class="page-nav">
+  <li class="prev">
+    <a href="Geometric_Optics_Intro_to_OSLO_Page.html"
+       title="previous chapter">← Introduction to OSLO</a>
+  </li>
+  <li class="next">
+    <a href="Geometric_Optics_Activities_Page.html"
+       title="next chapter">Activities (Week 1) →</a>
+  </li>
 </ul>
   
 </div>
 <hr>
           <div class="content" role="main">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="More-with-OSLO">
+<h1>More with OSLO<a class="headerlink" href="#More-with-OSLO" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Aspherical-surface">
+<h2>Aspherical surface<a class="headerlink" href="#Aspherical-surface" title="Permalink to this headline">¶</a></h2>
+<p>An aspherical surface profile can reduce or eliminate spherical aberration and also reduce other optical aberrations such as astigmatism, compared to a simple lens. Alternatively, an aspherical profile maybe needed to better approximate more complex surface profiles.</p>
+<p>Adding such a correction to a surface can be done by using the SPECIAL column. Click the button and select Polynomial Asphere (A) -&gt; Conic/Toric to bring up the following dialog box,</p>
+<p><img alt="toric" src="https://drive.google.com/uc?export=view&amp;id=1q4Ugr5U_l-eTfM1KODVkTgRLrHVtdhwX" /></p>
+<p>One may choose from one of 3 surface types, Rotationally symmetric, Cylinder, and Toroid.</p>
+<div class="section" id="Slider-Wheel">
+<h3>Slider Wheel<a class="headerlink" href="#Slider-Wheel" title="Permalink to this headline">¶</a></h3>
+<p>When attempting to optimize a multi-lens system in OSLO it is benificial to use the slider wheel. This eliminates the need to type numbers repeatedly into a spreadsheet, and gives better control on seeing when the system is optimized. The “slider-wheel” feature of OSLO creates a linear slider control that changes a variable (“wheel” is in reference to the fact that the mouse’s scroll-wheel can be used to change the value.)</p>
+<p>To create a slider-wheel, go to the optimize menu, select Slider-Wheel Design and fill in the desired elements. You may also choose to display aberration curves such as Optical Path Difference (OPD) or ray error (Ray-intercept). You can read more on these aberration curve in <a class="reference external" href="http://www.photonics.intec.ugent.be/education/IVPV/res_handbook/v1ch33.pdf">Chapter 33 of the Handbook for Optics</a>. If no such curves are desired, you can of course select Draw only.</p>
+<p>The following example outlines the steps for creating a slider-wheel that allows you to dynamically change the thickness of the second surface in a multi-lens system.</p>
+<p><img alt="Drawing with image surface" src="https://drive.google.com/uc?id=1VwzHErwhbV_LewryX-L8fUiiN6WbXVZl" /></p>
+<p>By selecting “Ray-intercept” and “All points” the ray error in focus will be shown for all field points (ie rays). In the above, two slider are created, but only one slider is setup properly. the first slider is set to change the Thickness of surface 2. Again, remember to interpret “Thickness” the way OSLO does!</p>
+<p>Alternatively, instead of Thickness you can change the Curvature of a surface with a slider and so on.</p>
+</div>
+</div>
 </div>
 
 
           </div>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Geometric_Optics_Intro_to_OSLO_Page.html"
+       title="previous chapter">← Introduction to OSLO</a>
+  </li>
+  <li class="next">
+    <a href="Geometric_Optics_Activities_Page.html"
+       title="next chapter">Activities (Week 1) →</a>
+  </li>
 </ul><div class="footer" role="contentinfo">
     <br>
     Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.

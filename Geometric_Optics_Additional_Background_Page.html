@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Background</title>
+      <title>Additional background</title>
     
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
@@ -29,8 +29,8 @@
     
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
-  <link rel="next" title="Additional background" href="Geometric_Optics_Additional_Background_Page.html" />
-  <link rel="prev" title="Introduction" href="Geometric_Optics_Introduction_Page.html" /> 
+  <link rel="next" title="Optical systems" href="Geometric_Optics_Optical_Systems_Page.html" />
+  <link rel="prev" title="Background" href="Geometric_Optics_Physics_background_Page.html" /> 
   </head>
 
   <body>
@@ -87,26 +87,28 @@
           </li>
 
         
-          <li class="toctree-l1 current"><a href="#" class="reference internal current">Background</a>
+          <li class="toctree-l1 "><a href="Geometric_Optics_Physics_background_Page.html" class="reference internal ">Background</a>
 
-            
-              <ul>
-                
-                  <li class="toctree-l2"><a href="#Lens-Maker’s-formula" class="reference internal">Lens Maker’s formula</a></li>
-                
-                  <li class="toctree-l2"><a href="#Gaussian-object/image-formula" class="reference internal">Gaussian object/image formula</a></li>
-                
-                  <li class="toctree-l2"><a href="#Transverse-magnification-formula" class="reference internal">Transverse magnification formula</a></li>
-                
-                  <li class="toctree-l2"><a href="#How-lenses-are-made" class="reference internal">How lenses are made</a></li>
-                
-              </ul>
             
           </li>
 
         
-          <li class="toctree-l1 "><a href="Geometric_Optics_Additional_Background_Page.html" class="reference internal ">Additional background</a>
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Additional background</a>
 
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Correcting-for-thick-lenses" class="reference internal">Correcting for thick lenses</a></li>
+                
+                  <li class="toctree-l2"><a href="#Principal-planes" class="reference internal">Principal planes</a></li>
+                
+                  <li class="toctree-l2"><a href="#Focal-length-of-two-thin-lens-systems" class="reference internal">Focal length of two thin lens systems</a></li>
+                
+                  <li class="toctree-l2"><a href="#Thin-lens-equation-but-for-thick-lenses?" class="reference internal">Thin lens equation but for thick lenses?</a></li>
+                
+                  <li class="toctree-l2"><a href="#Diverging-lenses" class="reference internal">Diverging lenses</a></li>
+                
+              </ul>
             
           </li>
 
@@ -159,18 +161,18 @@
   <ul class="breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
     
-    <li>Background</li>
+    <li>Additional background</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="Geometric_Optics_Introduction_Page.html"
-       title="previous chapter">← Introduction</a>
+    <a href="Geometric_Optics_Physics_background_Page.html"
+       title="previous chapter">← Background</a>
   </li>
   <li class="next">
-    <a href="Geometric_Optics_Additional_Background_Page.html"
-       title="next chapter">Additional background →</a>
+    <a href="Geometric_Optics_Optical_Systems_Page.html"
+       title="next chapter">Optical systems →</a>
   </li>
 </ul>
   
@@ -178,34 +180,36 @@
 <hr>
           <div class="content" role="main">
             
-  <div class="section" id="Background">
-<h1>Background<a class="headerlink" href="#Background" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Lens-Maker’s-formula">
-<h2>Lens Maker’s formula<a class="headerlink" href="#Lens-Maker’s-formula" title="Permalink to this headline">¶</a></h2>
-<p>The Lensmaker’s formula is derived in Young and Freedman. For thin lens in vacuum,</p>
+  <div class="section" id="Additional-background">
+<h1>Additional background<a class="headerlink" href="#Additional-background" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Correcting-for-thick-lenses">
+<h2>Correcting for thick lenses<a class="headerlink" href="#Correcting-for-thick-lenses" title="Permalink to this headline">¶</a></h2>
+<p>The Lens Maker’s equation given in the Background section is the result of a thin lens approximation where the thickness <span class="math notranslate nohighlight">\(t\)</span> of the lens is very small in comparision to the radius of curvature. When the lens is not thin, it becomes necessary to consider the original equation (Hecht 5th ed. Eqn 5.14),</p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{f} = (1-n)\left[ \frac{1}{r_1} - \frac{1}{r_2} \right]\]</div>
-<p>where <span class="math notranslate nohighlight">\(f\)</span> is the <em>focal length</em>, <span class="math notranslate nohighlight">\(r\)</span> is the radius of curvature, and <span class="math notranslate nohighlight">\(n\)</span> is the refractive index.</p>
+\[\frac{1}{f} = (1-n)\left[ \frac{1}{r_1} - \frac{1}{r_2} + \frac{(n-1)}{n}\frac{t}{r_1r_2} \right].\]</div>
+<p>Again, this expression assumes that the lenses are in air. It is important to note the addition term and how it scales with the thickess of the lens.</p>
 </div>
-<div class="section" id="Gaussian-object/image-formula">
-<h2>Gaussian object/image formula<a class="headerlink" href="#Gaussian-object/image-formula" title="Permalink to this headline">¶</a></h2>
-<p>The Gaussian object/image formula, often known as the Thin Lens equation, is one of the more simple and straight forward equations in geometric optics. This equation can apply to both positive and negative lenses, and can calculate whether an image will be real or virtual. In the equation (shown below) <span class="math notranslate nohighlight">\(f\)</span> represents the focus length of the lens, <span class="math notranslate nohighlight">\(o\)</span> represents the distance from the object to the lens, and <span class="math notranslate nohighlight">\(i\)</span> represents the distance from the lens to the image.</p>
+<div class="section" id="Principal-planes">
+<h2>Principal planes<a class="headerlink" href="#Principal-planes" title="Permalink to this headline">¶</a></h2>
+<p>The principal planes are two hypothetical planes (one for each surface) in a len at which all the refraction <em>can be considered</em> to happen. For a thin bi-convex lens, the two planes lie on the central plane bisecting the lens. For a thick lens this is not so, <img alt="Priciple planest" src="http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/imggo/pripl.gif" /></p>
+<p>Note that the focal length is measure from the principle planes! The distance from the vertexes to the principal planes (derived at the beginning of Chapter 6 of Hecht 5th ed) are given by,</p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{f} = \frac{1}{o} + \frac{1}{i}\]</div>
-<p>where <span class="math notranslate nohighlight">\(i\)</span> is positive for a real image and negative for a virtual image.</p>
+\[h_1 = \frac{f(n-1)t}{nr_1}\ \ , \quad\quad h_2 = \frac{f(n-1)t}{nr_2}\]</div>
 </div>
-<div class="section" id="Transverse-magnification-formula">
-<h2>Transverse magnification formula<a class="headerlink" href="#Transverse-magnification-formula" title="Permalink to this headline">¶</a></h2>
-<p>The transverse magnification (or linear magnification) is the ratio of the image size to the object size. If the image and object are in the same medium, the magnification becomes just the image distance divided by the object distance.</p>
+<div class="section" id="Focal-length-of-two-thin-lens-systems">
+<h2>Focal length of two thin lens systems<a class="headerlink" href="#Focal-length-of-two-thin-lens-systems" title="Permalink to this headline">¶</a></h2>
+<p>The focal length of an optical system consisting of two thin lenses is related to the focal length of each of the lenses as follows,</p>
 <div class="math notranslate nohighlight">
-\[m = \frac{h_i}{h_o} = -\frac{i}{o}\]</div>
-<p>where <span class="math notranslate nohighlight">\(h_o\)</span> is the object size and <span class="math notranslate nohighlight">\(h_i\)</span> is the image size.</p>
+\[\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1f_2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> is the distance of separation between the lenses (distance between the centers of the lenses).</p>
 </div>
-<div class="section" id="How-lenses-are-made">
-<h2>How lenses are made<a class="headerlink" href="#How-lenses-are-made" title="Permalink to this headline">¶</a></h2>
-<p>The optical glass used to make lenses like those found in cameras is supplied to lens manufacturers by specialized vendors. Usually, these venders provide sliced glass plates called a “pressed plates” which are then grinded into the desired lens shape. First, the plates are shaped to concave or convex forms by a curve generator machine whose function is a first-step grinder. To reach its exact shape, a lens goes through a sequence of stages in which it is ground by polishing particles in water.
-The polishing particles become smaller in each stage as the lens is refined. An important characteristic of the lens produced is that it is centered so that the outer edge of the lens is perfect in circumference relative to the optical axis of the lens. Lenses made of plastic or bonded glass and resin are produced by the similar processes.</p>
-<p>Read more <a class="reference external" href="http://www.madehow.com/Volume-2/Camera-Lens.html#ixzz6IsWtzNzc">here</a>.</p>
+<div class="section" id="Thin-lens-equation-but-for-thick-lenses?">
+<h2>Thin lens equation but for thick lenses?<a class="headerlink" href="#Thin-lens-equation-but-for-thick-lenses?" title="Permalink to this headline">¶</a></h2>
+<p>The thin lens equation given in the Background section cannot be used directly to find images formed by thick lenses. More on methods for finding the image formed by thick lenses can be read about <a class="reference external" href="http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/thklencon.html#c1">here</a>.</p>
+</div>
+<div class="section" id="Diverging-lenses">
+<h2>Diverging lenses<a class="headerlink" href="#Diverging-lenses" title="Permalink to this headline">¶</a></h2>
+<p>It may prove beneficial to explore diverging lenses in the <a class="reference external" href="https://www.compadre.org/Physlets/optics/illustration35_2.cfm">Image from a Diverging Lens Physlet</a>.</p>
 </div>
 </div>
 
@@ -214,12 +218,12 @@ The polishing particles become smaller in each stage as the lens is refined. An 
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="Geometric_Optics_Introduction_Page.html"
-       title="previous chapter">← Introduction</a>
+    <a href="Geometric_Optics_Physics_background_Page.html"
+       title="previous chapter">← Background</a>
   </li>
   <li class="next">
-    <a href="Geometric_Optics_Additional_Background_Page.html"
-       title="next chapter">Additional background →</a>
+    <a href="Geometric_Optics_Optical_Systems_Page.html"
+       title="next chapter">Optical systems →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
     <br>

@@ -12,7 +12,11 @@ Geometric Optics with OSLO
 
    Geometric_Optics_Introduction_Page
    Geometric_Optics_Physics_background_Page
+   Geometric_Optics_Additional_Background_Page
+   Geometric_Optics_Optical_Systems_Page
    Geometric_Optics_Intro_to_OSLO_Page
+   Geometric_Optics_More_with_OSLO_Page
    Geometric_Optics_Activities_Page
+   Geometric_Optics_Activities_Week_2_Page
    Geometric_Optics_Credits_Page
 
