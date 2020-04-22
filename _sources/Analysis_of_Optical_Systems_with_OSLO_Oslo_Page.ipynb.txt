@@ -1,0 +1,159 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Analysis of Optical Systems with OSLO Oslo Page.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2Qn5rdqURggX",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Analysis and Optimization with OSLO"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "CMqbNGJer0E4",
+        "colab_type": "text"
+      },
+      "source": [
+        "One of the most useful resourse for learning how to work with Oslo is the the [OSLO User Guide](https://www.lambdares.com/wp-content/uploads/support/oslo/oslo_edu/oslo-user-guide.pdf). Sections that may prove most relevant to this lab include the **Lens drawing section (pg. 49)** and the following section called **Ray intercept curves analysis (pg. 53)**."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MHw4ZbsLs1Ym",
+        "colab_type": "text"
+      },
+      "source": [
+        "The figure below highlights and identifies the 4 types of windows (in red) and some usfull buttons (in green) for future reference.\n",
+        "\n",
+        "![Oslo windows](https://drive.google.com/uc?export=view&id=1QTP7OlJNs5WXEWAjrwVJiFpLDvmW1Pue)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "adx4iQRysDES",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Navigation via the main menus"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "69IAaIyrsZbg",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Ray fans/Ray intercept curves\n",
+        "\n",
+        "Below, the option for creating plots of the ray intercept curves for a single object point/field point is shown.\n",
+        "\n",
+        "![Ray fans](https://drive.google.com/uc?export=view&id=1cBnnCxJgZG2fTh35drKcHA8c6tA9ZUTF)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "FF6Jkn0itzj1",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Spot diagram/Airy disc\n",
+        "\n",
+        "The following picture depicts the menu option for creating a spot diagram (default is on-axis object point/field point).\n",
+        "\n",
+        "![spot](https://drive.google.com/uc?export=view&id=1HEBi6DX4CeOoejGNU6W8m5NfGJYjVfvc)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "CjEOpbPJvAnW",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Point spread function (PSF)\n",
+        "\n",
+        "The following depicts the menu option for creating a PSF map as a function of transverse position away from the longitudinal axis.\n",
+        "\n",
+        "![psf](https://drive.google.com/uc?export=view&id=1R0XEbjDhd69pkDdEf67hvEYfxWoJUo_H)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9XyOA-NOvJGY",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Modulation transfer function (MTF)\n",
+        "\n",
+        "The following depicts the menu option for creating a plot of MTF as a function of spacial frequency.\n",
+        "\n",
+        "![mtf](https://drive.google.com/uc?export=view&id=1UwGBl01IdvbHSSntflRrYyl6QSTBxpYW)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "50BopwimvWZ0",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Navigation vis the graphics window(s)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3nqNSYK2vdBF",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Menu options\n",
+        "\n",
+        "Clicking the icon in the top left corner of the graphics window ie the icon containing four blue squares opens the menu pictured below,\n",
+        "\n",
+        "![graphics menu](https://drive.google.com/uc?export=view&id=1KBCIcB3-rneTu3Sc7drqKmp2i_FvVmg0)\n",
+        "\n",
+        "Notice that when the Ray Analysis option is selected, for example, the buttons at the top of the graphics window change. \n",
+        "\n",
+        "![sub menu](https://drive.google.com/uc?export=view&id=1uxfGFJ4V9RFypMe3g5wmafjHJxdfKHlU)\n",
+        "\n",
+        "Hovering over these buttons should pop up text describing the option."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "A5otHbmUvnJT",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Changing default plot parameters\n",
+        "\n",
+        "Right-clicking anywhere on the plot should bring up a menu. The first two options allow for changing plot parameters and updating the plot to reflect the changes.\n",
+        "\n",
+        "![change parameters](https://drive.google.com/uc?export=view&id=1guKBKRDjDsMS3UDcNMj8Aqp_SN-vuWFL)\n"
+      ]
+    }
+  ]
+}

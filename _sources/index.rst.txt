@@ -1,22 +1,16 @@
-.. Physics 343 Online Lab documentation master file, created by
-   sphinx-quickstart on Thu Apr  9 03:48:16 2020.
+.. Physics 343 Online Labs documentation master file, created by
+   sphinx-quickstart on Tue Apr 21 17:52:47 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Geometric Optics with OSLO
-===========================================
+Analysis of Optical Systems with OSLO
+===================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   Geometric_Optics_Introduction_Page
-   Geometric_Optics_Physics_background_Page
-   Geometric_Optics_Additional_Background_Page
-   Geometric_Optics_Optical_Systems_Page
-   Geometric_Optics_Intro_to_OSLO_Page
-   Geometric_Optics_More_with_OSLO_Page
-   Geometric_Optics_Activities_Page
-   Geometric_Optics_Activities_Week_2_Page
-   Geometric_Optics_Credits_Page
-
+   Analysis_of_Optical_Systems_with_OSLO_Intro_Page
+   Analysis_of_Optical_Systems_with_OSLO_Background_Page
+   Analysis_of_Optical_Systems_with_OSLO_Oslo_Page
+   Analysis_of_Optical_Systems_with_OSLO_Activities_Page

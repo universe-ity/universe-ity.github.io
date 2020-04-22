@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Analysis and Optimization with OSLO</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/romnnn_sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Activities" href="Analysis_of_Optical_Systems_with_OSLO_Activities_Page.html" />
+  <link rel="prev" title="Background" href="Analysis_of_Optical_Systems_with_OSLO_Background_Page.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <div class="home-link-container">
+      <router-link to="index.html" class="home-link">
+      
+        <span class="site-name">Physics 343 Online Labs</span>
+    </router-link>
+  </div>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Search</span>
+    <div class="searchformwrapper">
+      <form autocomplete="off" class="search" action="search.html" method="get">
+        <input type="text" name="q" autocomplete="off" />
+        <input type="submit" value="Go" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#analysis-of-optical-systems-with-oslo">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="Analysis_of_Optical_Systems_with_OSLO_Intro_Page.html" class="reference internal ">Introduction</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Analysis_of_Optical_Systems_with_OSLO_Background_Page.html" class="reference internal ">Background</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Analysis and Optimization with OSLO</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Navigation-via-the-main-menus" class="reference internal">Navigation via the main menus</a></li>
+                
+                  <li class="toctree-l2"><a href="#Navigation-vis-the-graphics-window(s)" class="reference internal">Navigation vis the graphics window(s)</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Analysis_of_Optical_Systems_with_OSLO_Activities_Page.html" class="reference internal ">Activities</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Analysis and Optimization with OSLO</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Analysis_of_Optical_Systems_with_OSLO_Background_Page.html"
+       title="previous chapter">← Background</a>
+  </li>
+  <li class="next">
+    <a href="Analysis_of_Optical_Systems_with_OSLO_Activities_Page.html"
+       title="next chapter">Activities →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="Analysis-and-Optimization-with-OSLO">
+<h1>Analysis and Optimization with OSLO<a class="headerlink" href="#Analysis-and-Optimization-with-OSLO" title="Permalink to this headline">¶</a></h1>
+<p>One of the most useful resourse for learning how to work with Oslo is the the <a class="reference external" href="https://www.lambdares.com/wp-content/uploads/support/oslo/oslo_edu/oslo-user-guide.pdf">OSLO User Guide</a>. Sections that may prove most relevant to this lab include the <strong>Lens drawing section (pg. 49)</strong> and the following section called <strong>Ray intercept curves analysis (pg. 53)</strong>.</p>
+<p>The figure below highlights and identifies the 4 types of windows (in red) and some usfull buttons (in green) for future reference.</p>
+<p><img alt="Oslo windows" src="https://drive.google.com/uc?export=view&amp;id=1QTP7OlJNs5WXEWAjrwVJiFpLDvmW1Pue" /></p>
+<div class="section" id="Navigation-via-the-main-menus">
+<h2>Navigation via the main menus<a class="headerlink" href="#Navigation-via-the-main-menus" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Ray-fans/Ray-intercept-curves">
+<h3>Ray fans/Ray intercept curves<a class="headerlink" href="#Ray-fans/Ray-intercept-curves" title="Permalink to this headline">¶</a></h3>
+<p>Below, the option for creating plots of the ray intercept curves for a single object point/field point is shown.</p>
+<p><img alt="Ray fans" src="https://drive.google.com/uc?export=view&amp;id=1cBnnCxJgZG2fTh35drKcHA8c6tA9ZUTF" /></p>
+</div>
+<div class="section" id="Spot-diagram/Airy-disc">
+<h3>Spot diagram/Airy disc<a class="headerlink" href="#Spot-diagram/Airy-disc" title="Permalink to this headline">¶</a></h3>
+<p>The following picture depicts the menu option for creating a spot diagram (default is on-axis object point/field point).</p>
+<p><img alt="spot" src="https://drive.google.com/uc?export=view&amp;id=1HEBi6DX4CeOoejGNU6W8m5NfGJYjVfvc" /></p>
+</div>
+<div class="section" id="Point-spread-function-(PSF)">
+<h3>Point spread function (PSF)<a class="headerlink" href="#Point-spread-function-(PSF)" title="Permalink to this headline">¶</a></h3>
+<p>The following depicts the menu option for creating a PSF map as a function of transverse position away from the longitudinal axis.</p>
+<p><img alt="psf" src="https://drive.google.com/uc?export=view&amp;id=1R0XEbjDhd69pkDdEf67hvEYfxWoJUo_H" /></p>
+</div>
+<div class="section" id="Modulation-transfer-function-(MTF)">
+<h3>Modulation transfer function (MTF)<a class="headerlink" href="#Modulation-transfer-function-(MTF)" title="Permalink to this headline">¶</a></h3>
+<p>The following depicts the menu option for creating a plot of MTF as a function of spacial frequency.</p>
+<p><img alt="mtf" src="https://drive.google.com/uc?export=view&amp;id=1UwGBl01IdvbHSSntflRrYyl6QSTBxpYW" /></p>
+</div>
+</div>
+<div class="section" id="Navigation-vis-the-graphics-window(s)">
+<h2>Navigation vis the graphics window(s)<a class="headerlink" href="#Navigation-vis-the-graphics-window(s)" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Menu-options">
+<h3>Menu options<a class="headerlink" href="#Menu-options" title="Permalink to this headline">¶</a></h3>
+<p>Clicking the icon in the top left corner of the graphics window ie the icon containing four blue squares opens the menu pictured below,</p>
+<p><img alt="graphics menu" src="https://drive.google.com/uc?export=view&amp;id=1KBCIcB3-rneTu3Sc7drqKmp2i_FvVmg0" /></p>
+<p>Notice that when the Ray Analysis option is selected, for example, the buttons at the top of the graphics window change.</p>
+<p><img alt="sub menu" src="https://drive.google.com/uc?export=view&amp;id=1uxfGFJ4V9RFypMe3g5wmafjHJxdfKHlU" /></p>
+<p>Hovering over these buttons should pop up text describing the option.</p>
+</div>
+<div class="section" id="Changing-default-plot-parameters">
+<h3>Changing default plot parameters<a class="headerlink" href="#Changing-default-plot-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Right-clicking anywhere on the plot should bring up a menu. The first two options allow for changing plot parameters and updating the plot to reflect the changes.</p>
+<p><img alt="change parameters" src="https://drive.google.com/uc?export=view&amp;id=1guKBKRDjDsMS3UDcNMj8Aqp_SN-vuWFL" /></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Analysis_of_Optical_Systems_with_OSLO_Background_Page.html"
+       title="previous chapter">← Background</a>
+  </li>
+  <li class="next">
+    <a href="Analysis_of_Optical_Systems_with_OSLO_Activities_Page.html"
+       title="next chapter">Activities →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

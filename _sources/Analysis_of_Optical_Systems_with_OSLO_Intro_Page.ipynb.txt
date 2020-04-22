@@ -1,0 +1,37 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Analysis of Optical Systems with OSLO Intro Page.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "DcLzn7gl5ZaC",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Introduction"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "efd536QdeBax",
+        "colab_type": "text"
+      },
+      "source": [
+        "In this lab, students will explore optical aberrations using the analysis tools provided in OSLO. Students will be tasked with providing a more detailed analysis of simple optical lens systems than in previous labs and using their analysis, students will also be tasked with optimizing a given Cooke Triplet lens system."
+      ]
+    }
+  ]
+}
