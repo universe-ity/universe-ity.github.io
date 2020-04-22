@@ -20,7 +20,7 @@
         "colab_type": "text"
       },
       "source": [
-        "# Analysis and Optimization with OSLO"
+        "# Analysis with OSLO"
       ]
     },
     {
