@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html >
+  
+<!-- Mirrored from universe-ity.github.io/Geometric_Optics_Intro_to_OSLO_Page.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Apr 2020 22:20:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Introduction to OSLO</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/romnnn_sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="../cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latestdda6.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="More with OSLO" href="Geometric_Optics_More_with_OSLO_Page.html" />
+  <link rel="prev" title="Optical systems" href="Geometric_Optics_Optical_Systems_Page.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <div class="home-link-container">
+      <router-link to="index.html" class="home-link">
+      
+        <span class="site-name">Physics 343 Online Labs</span>
+    </router-link>
+  </div>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Search</span>
+    <div class="searchformwrapper">
+      <form autocomplete="off" class="search" action="https://universe-ity.github.io/search.html" method="get">
+        <input type="text" name="q" autocomplete="off" />
+        <input type="submit" value="Go" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index-2.html#geometric-optics-with-oslo">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_Introduction_Page.html" class="reference internal ">Introduction</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_Physics_background_Page.html" class="reference internal ">Background</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_Additional_Background_Page.html" class="reference internal ">Additional background</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_Optical_Systems_Page.html" class="reference internal ">Optical systems</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Introduction to OSLO</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#1.-Sketch-the-optical-system" class="reference internal">1. Sketch the optical system</a></li>
+                
+                  <li class="toctree-l2"><a href="#2.-Find-the-Vertex-for-each-surface" class="reference internal">2. Find the Vertex for each surface</a></li>
+                
+                  <li class="toctree-l2"><a href="#3.-Find-the-curvature-of-each-surface" class="reference internal">3. Find the curvature of each surface</a></li>
+                
+                  <li class="toctree-l2"><a href="#4.-Find-the-distance-to-the-next-surface" class="reference internal">4. Find the distance to the next surface</a></li>
+                
+                  <li class="toctree-l2"><a href="#5.-Find-the-height-of-each-surface-(from-the-optical-axis)" class="reference internal">5. Find the height of each surface (from the optical axis)</a></li>
+                
+                  <li class="toctree-l2"><a href="#6.-Find-the-material-to-next-surface" class="reference internal">6. Find the material to next surface</a></li>
+                
+                  <li class="toctree-l2"><a href="#7.-Start-using-the-OSLO-names" class="reference internal">7. Start using the OSLO names</a></li>
+                
+                  <li class="toctree-l2"><a href="#8.-Setting-the-index-of-refraction" class="reference internal">8. Setting the index of refraction</a></li>
+                
+                  <li class="toctree-l2"><a href="#9.-Changing-the-object-size" class="reference internal">9. Changing the object size</a></li>
+                
+                  <li class="toctree-l2"><a href="#10.-Forcing-OSLO-to-draw-surface" class="reference internal">10. Forcing OSLO to draw surface</a></li>
+                
+                  <li class="toctree-l2"><a href="#11.-Changing-the-rays-that-are-drawn" class="reference internal">11. Changing the rays that are drawn</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_More_with_OSLO_Page.html" class="reference internal ">More with OSLO</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_Activities_Page.html" class="reference internal ">Activities (Week 1)</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_Activities_Week_2_Page.html" class="reference internal ">Activities (Week 2)</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Geometric_Optics_Credits_Page.html" class="reference internal ">Credits</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index-2.html">Docs</a> &raquo;</li>
+    
+    <li>Introduction to OSLO</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Geometric_Optics_Optical_Systems_Page.html"
+       title="previous chapter">← Optical systems</a>
+  </li>
+  <li class="next">
+    <a href="Geometric_Optics_More_with_OSLO_Page.html"
+       title="next chapter">More with OSLO →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="Introduction-to-OSLO">
+<h1>Introduction to OSLO<a class="headerlink" href="#Introduction-to-OSLO" title="Permalink to this headline">¶</a></h1>
+<p>OSLO requires a complete description of the optical system through a set of parameters which are organized into the Surface Data Spreadsheet (<code class="docutils literal notranslate"><span class="pre">Lens</span> <span class="pre">&gt;</span> <span class="pre">Surface</span> <span class="pre">Data</span> <span class="pre">Spreadsheet</span></code>).</p>
+<p><img alt="Surface Data Table" src="https://drive.google.com/uc?export=view&amp;id=1_4H8KakYv4dEVJrgRIeAkPsUy6WGa5AJ" /></p>
+<p>Each row of the table describes a different surface and each column within represents a specific property of that surface. Each column headers has a precise meaning. It is important that the correct values are entered into OSLO in order for the results to best match those of the desired optical system. It is thus imperative that steps be taken to properly determine and verify the correct inputs for the columns. The suggested series of steps to follow for those just getting started with OSLO are,</p>
+<p><strong>STEPS</strong></p>
+<ol class="arabic simple">
+<li><p>Sketch the Optical System (<em>on paper!</em>)</p></li>
+<li><p>Find the Vertex for each surface</p></li>
+<li><p>Find the Curvature of each surface</p></li>
+<li><p>Find the Distance to next surface</p></li>
+<li><p>Find the Height of each surface</p></li>
+<li><p>Find the Material to next surface</p></li>
+<li><p>Tabulate the result</p></li>
+</ol>
+<p>Additional steps may also be needed such as,</p>
+<ol class="arabic simple" start="8">
+<li><p>Setting the index of refraction</p></li>
+<li><p>Changing the object size</p></li>
+<li><p>Forcing OSLO to draw surface(s)</p></li>
+<li><p>Changing the rays that are drawn</p></li>
+</ol>
+<div class="section" id="1.-Sketch-the-optical-system">
+<h2>1. Sketch the optical system<a class="headerlink" href="#1.-Sketch-the-optical-system" title="Permalink to this headline">¶</a></h2>
+<p>The first step in understanding OSLO will be to understand the numbers and values it is asking for. To do this, sketch out a simple object-lens-image diagram similar to what is shown below <em>on paper.</em></p>
+<p><img alt="Setup sketch" src="../omlc.org/classroom/oslotut/simple/sketch.png" /></p>
+</div>
+<div class="section" id="2.-Find-the-Vertex-for-each-surface">
+<h2>2. Find the Vertex for each surface<a class="headerlink" href="#2.-Find-the-Vertex-for-each-surface" title="Permalink to this headline">¶</a></h2>
+<p>Start off by identifying each vertex in the surface, and marking each with a vertical line where each surface crosses the optical axis. These vertical lines will be used to gauge distances from each surface.</p>
+<p><img alt="Vertices" src="../omlc.org/classroom/oslotut/simple/vertices.png" /></p>
+<p>Label the object on the left with “OBJ”, and the image on the right with “IMS”. Normally one would label the left side of the lens with a “1” and the right side of the lens with a “2”.</p>
+<p><img alt="Vertices labeled" src="../omlc.org/classroom/oslotut/simple/vertices-labelled.png" /></p>
+<p>However, OSLO does not follow the normal labelling convention. Instead, one surface, either “1” or “2” will always be the aperature stop, or “AST”. In this system, the left side of the lens, what normally would’ve been labelled as “1”, will be labeled “AST” instead. The other keeps the conventional label of “2.”</p>
+<p><img alt="Vertices labeled OSLO" src="../omlc.org/classroom/oslotut/simple/vertices-labelled-2.png" /></p>
+</div>
+<div class="section" id="3.-Find-the-curvature-of-each-surface">
+<h2>3. Find the curvature of each surface<a class="headerlink" href="#3.-Find-the-curvature-of-each-surface" title="Permalink to this headline">¶</a></h2>
+<p>Using the Lens Maker’s formula at the beginning of this section, the radius of curvature <span class="math notranslate nohighlight">\(r\)</span> for a bi-convex lens, assuming both surfaces have the same curvature (<span class="math notranslate nohighlight">\(r=|r_1|=|r_2|\)</span>), is</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{f}{2(n-1)}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should verify this result!</p>
+</div>
+<p>OSLO defines positive radii as those with a center to the right of the vertex:</p>
+<p><img alt="https://omlc.org/classroom/oslotut/simple/curvature1.png" src="../omlc.org/classroom/oslotut/simple/curvature1.png" /></p>
+<p>OSLO defines negative radii as those with a center to the left of the vertex:</p>
+<p><img alt="https://omlc.org/classroom/oslotut/simple/curvature2.png" src="../omlc.org/classroom/oslotut/simple/curvature2.png" /></p>
+<p><strong>IMPORTANT:</strong> The object and image surfaces also have radii of curvatures. Since they are flat, their curvatures are that of a circle that is infinitely large and thus their curvatures are infinite. OSLO allows one to write 0 to represent infinity for radius of curvature.</p>
+<p>Altogether, the sketch should look like,</p>
+<p><img alt="OBJ distance" src="../omlc.org/classroom/oslotut/simple/distance1.png" /></p>
+</div>
+<div class="section" id="4.-Find-the-distance-to-the-next-surface">
+<h2>4. Find the distance to the next surface<a class="headerlink" href="#4.-Find-the-distance-to-the-next-surface" title="Permalink to this headline">¶</a></h2>
+<p>The object distance also doesnt follow convention; what is measured, instead, is the distance to the next surface. The object (OBJ) distance is represented below by <span class="math notranslate nohighlight">\(d_{OBJ}\)</span> ,</p>
+<p><img alt="OBJ distance" src="../omlc.org/classroom/oslotut/simple/distance1.png" /></p>
+<p>The distance of the first surface (the AST surface) is the thickness of the lens from vertex to vertex</p>
+<p><img alt="AST distance" src="../omlc.org/classroom/oslotut/simple/distance2.png" /></p>
+<p>The distance for the second surface is the length to the image surface. OSLO will calculate this distance.</p>
+<p><img alt="surface 2 distance" src="../omlc.org/classroom/oslotut/simple/distance3.png" /></p>
+<p>Adding these distances to the table describing the single lens system:</p>
+<table><tr><th><p>Surface</p>
+</th><th><p>Curvature</p>
+</th><th><p>Distance</p>
+</th><th><p>Height</p>
+</th><th><p>Material</p>
+</th></tr><tr><td><p>OBJ</p>
+</td><td><p>0</p>
+</td><td class="new"><p><span class="math notranslate nohighlight">\(D_{OBJ}\)</span></p>
+</td><td></td><td></td></tr><tr><td><p>AST</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_{AST}\)</span></p>
+</td><td class="new"><p><span class="math notranslate nohighlight">\(D_{AST}\)</span></p>
+</td><td></td><td></td></tr><tr><td><p>2</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_2\)</span></p>
+</td><td class="new"><p><span class="math notranslate nohighlight">\(D_2\)</span></p>
+</td><td></td><td></td></tr><tr><td><p>IMS</p>
+</td><td><p>0</p>
+</td><td class="new"><p>(calc)</p>
+</td><td></td><td></td></tr></table></div>
+<div class="section" id="5.-Find-the-height-of-each-surface-(from-the-optical-axis)">
+<h2>5. Find the height of each surface (from the optical axis)<a class="headerlink" href="#5.-Find-the-height-of-each-surface-(from-the-optical-axis)" title="Permalink to this headline">¶</a></h2>
+<p>This involves determining the height of the object from the optical axis (or its radius). The object (OBJ) height is</p>
+<p><img alt="Obj height" src="../omlc.org/classroom/oslotut/simple/heights1.png" /></p>
+<p>The height of the first surface (the AST surface) is</p>
+<p><img alt="First surface height" src="../omlc.org/classroom/oslotut/simple/heights2.png" /></p>
+<p>The height of the second surface should be the height of the previous surface</p>
+<p><img alt="Second surface height" src="../omlc.org/classroom/oslotut/simple/heights3.png" /></p>
+<p>The height of the image surface can be left blank. OSLO will calculate it for you.</p>
+<p><img alt="Calculated image height" src="../omlc.org/classroom/oslotut/simple/heights4.png" /></p>
+<p>Again, adding these heights into the optical system table:</p>
+<table><tr><th><p>Surface</p>
+</th><th><p>Curvature</p>
+</th><th><p>Distance</p>
+</th><th><p>Height</p>
+</th><th><p>Material</p>
+</th></tr><tr><td><p>OBJ</p>
+</td><td><p>0</p>
+</td><td><p><span class="math notranslate nohighlight">\(D_{OBJ}\)</span></p>
+</td><td class="new"><p><span class="math notranslate nohighlight">\(h_{OBJ}\)</span></p>
+</td><td></td></tr><tr><td><p>AST</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_{AST}\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(D_{AST}\)</span></p>
+</td><td class="new"><p><span class="math notranslate nohighlight">\(h_{AST}\)</span></p>
+</td><td></td></tr><tr><td><p>2</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_2\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(D_2\)</span></p>
+</td><td class="new"><p><span class="math notranslate nohighlight">\(h_2\)</span></p>
+</td><td></td></tr><tr><td><p>IMS</p>
+</td><td><p>0</p>
+</td><td><p>(calc)</p>
+</td><td class="new"><p>(calc)</p>
+</td><td></td></tr></table></div>
+<div class="section" id="6.-Find-the-material-to-next-surface">
+<h2>6. Find the material to next surface<a class="headerlink" href="#6.-Find-the-material-to-next-surface" title="Permalink to this headline">¶</a></h2>
+<p>The material for each surface is the material that comes <strong>after</strong> the surface. Thus, in our case, the material for the OBJ surface is just air.</p>
+<p><img alt="OBJ medium" src="../omlc.org/classroom/oslotut/simple/medium1.png" /></p>
+<p>The material for the next surface (the AST surface) is the glass that the lens is made from</p>
+<p><img alt="AST medium" src="../omlc.org/classroom/oslotut/simple/medium2.png" /></p>
+<p>The material for the next surface is air again!</p>
+<p><img alt="2 medium" src="../omlc.org/classroom/oslotut/simple/medium3.png" /></p>
+<p>So, the table describing the optical system is</p>
+<table><tr><th><p>Surface</p>
+</th><th><p>Curvature</p>
+</th><th><p>Distance</p>
+</th><th><p>Height</p>
+</th><th><p>Material</p>
+</th></tr><tr><td><p>OBJ</p>
+</td><td><p>0</p>
+</td><td><p><span class="math notranslate nohighlight">\(D_{OBJ}\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(h_{OBJ}\)</span></p>
+</td><td class="new"><p>air</p>
+</td></tr><tr><td><p>AST</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_{AST}\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(D_{AST}\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(h_{AST}\)</span></p>
+</td><td class="new"><p>glass</p>
+</td></tr><tr><td><p>2</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_2\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(D_2\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(h_2\)</span></p>
+</td><td class="new"><p>air</p>
+</td></tr><tr><td><p>IMS</p>
+</td><td><p>0</p>
+</td><td><p>(calc)</p>
+</td><td><p>(calc)</p>
+</td><td class="new"><p>air</p>
+</td></tr></table></div>
+<div class="section" id="7.-Start-using-the-OSLO-names">
+<h2>7. Start using the OSLO names<a class="headerlink" href="#7.-Start-using-the-OSLO-names" title="Permalink to this headline">¶</a></h2>
+<p>OSLO uses different names for each column. OSLO’s names kind of make sense, although they can be confusing for some. For example, “height” becomes “APERTURE RADIUS.”</p>
+<table><tr><th><p>SRF</p>
+</th><th><p>RADIUS</p>
+</th><th><p>THICKNESS</p>
+</th><th><p>APERTURE RADIUS</p>
+</th><th><p>GLASS</p>
+</th></tr><tr><td><p>OBJ</p>
+</td><td><p>0</p>
+</td><td><p><span class="math notranslate nohighlight">\(D_{OBJ}\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(h_{OBJ}\)</span></p>
+</td><td class="new"><p>air</p>
+</td></tr><tr><td><p>AST</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_{AST}\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(D_{AST}\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(h_{AST}\)</span></p>
+</td><td class="new"><p>glass</p>
+</td></tr><tr><td><p>2</p>
+</td><td><p><span class="math notranslate nohighlight">\(R_2\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(D_2\)</span></p>
+</td><td><p><span class="math notranslate nohighlight">\(h_2\)</span></p>
+</td><td class="new"><p>air</p>
+</td></tr><tr><td><p>IMS</p>
+</td><td><p>0</p>
+</td><td><p>(calc)</p>
+</td><td><p>(calc)</p>
+</td><td class="new"><p>air</p>
+</td></tr></table><p>Open a new lens file in OSLO. The <code class="docutils literal notranslate"><span class="pre">Surface</span> <span class="pre">Data</span></code> window will look like this. The headings are the same as the ones above.</p>
+<p><img alt="oslo start" src="../omlc.org/classroom/oslotut/simple/oslostart2.png" /></p>
+<p>Notice that one surface (row) is missing. There are many ways to add rows, but the simplest is to select the image surface row (by clicking on the <code class="docutils literal notranslate"><span class="pre">IMS</span></code> button) and typing Ctrl+I.</p>
+<p><img alt="oslo start" src="../omlc.org/classroom/oslotut/simple/oslostart2.png" /></p>
+<p>And now it is just a matter of entering the data previously gathered in the table above into the new Surface Data Window.</p>
+</div>
+<div class="section" id="8.-Setting-the-index-of-refraction">
+<h2>8. Setting the index of refraction<a class="headerlink" href="#8.-Setting-the-index-of-refraction" title="Permalink to this headline">¶</a></h2>
+<p>Instead of using a real glass with chromatic dispersion, it may be more useful to have a single index such as <span class="math notranslate nohighlight">\(n=1.5\)</span>.</p>
+<p>Specifically this means that the first surface <code class="docutils literal notranslate"><span class="pre">AST</span></code> should have an index of refraction of 1.5. To do this, click on the button in the glass column of the <code class="docutils literal notranslate"><span class="pre">AST</span></code> line. Select <code class="docutils literal notranslate"><span class="pre">Direct...</span></code> from the pop-up menu and you’ll see</p>
+<p><img alt="Refractive Index" src="../omlc.org/classroom/oslotut/simple/xrefractive-index.png" /></p>
+<p>after the refractive index at each wavelength is changed to 1.5. Click the green check box in the upper left hand corner of the dialog box and the <code class="docutils literal notranslate"><span class="pre">Surface</span> <span class="pre">Data</span></code> spreadsheet should look like</p>
+<p><img alt="starting data" src="../omlc.org/classroom/oslotut/simple/xfirst-try.png" /></p>
+<p>The three wavelength are traditional optical design wavelengths and correspond to easily obtained <a class="reference external" href="https://en.wikipedia.org/wiki/Fraunhofer_lines">Fraunhofer emission lines</a> for green, blue, and red light.</p>
+<table><tr><td><p>Helium</p>
+</td><td><p>d-line</p>
+</td><td><p>587.56nm</p>
+</td><td><p>Green</p>
+</td></tr><tr><td><p>Hydrogen</p>
+</td><td><p>F-line</p>
+</td><td><p>486.13nm</p>
+</td><td><p>Blue</p>
+</td></tr><tr><td><p>Hydrogen</p>
+</td><td><p>C-line</p>
+</td><td><p>656.27nm</p>
+</td><td><p>Red</p>
+</td></tr></table></div>
+<div class="section" id="9.-Changing-the-object-size">
+<h2>9. Changing the object size<a class="headerlink" href="#9.-Changing-the-object-size" title="Permalink to this headline">¶</a></h2>
+<p>The object height (<code class="docutils literal notranslate"><span class="pre">APERTURE</span> <span class="pre">RADIUS</span></code>) cannot be changed just by clicking and entering the object height. Instead, the height is changed by clicking the <code class="docutils literal notranslate"><span class="pre">Setup</span></code> button in the <code class="docutils literal notranslate"><span class="pre">Surface</span> <span class="pre">Data</span></code> window. The place to enter the desired height is highlighted below,</p>
+<p><img alt="height dialog" src="../omlc.org/classroom/oslotut/simple/xobject.png" /></p>
+</div>
+<div class="section" id="10.-Forcing-OSLO-to-draw-surface">
+<h2>10. Forcing OSLO to draw surface<a class="headerlink" href="#10.-Forcing-OSLO-to-draw-surface" title="Permalink to this headline">¶</a></h2>
+<p>To force OSLO to show a surface, one uses the button in the <code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code> column. In the row corresponding to the surface that needs to be drawn, click the button under the <code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code> column and navigate to <code class="docutils literal notranslate"><span class="pre">Surface</span> <span class="pre">Control</span> <span class="pre">(F)</span> <span class="pre">-&gt;</span> <span class="pre">General</span></code> to get the following dialog box</p>
+<p><img alt="curvature AST" src="../omlc.org/classroom/oslotut/simple/xcontrol.png" /></p>
+<p>Change the appearance from <code class="docutils literal notranslate"><span class="pre">Automatic</span></code> to <code class="docutils literal notranslate"><span class="pre">Drawn</span></code>.</p>
+</div>
+<div class="section" id="11.-Changing-the-rays-that-are-drawn">
+<h2>11. Changing the rays that are drawn<a class="headerlink" href="#11.-Changing-the-rays-that-are-drawn" title="Permalink to this headline">¶</a></h2>
+<p>What if the desire is to trace a bunch of rays from the top of the object? To do this, go to the <code class="docutils literal notranslate"><span class="pre">Lens</span></code> menu and select <code class="docutils literal notranslate"><span class="pre">Lens</span> <span class="pre">Drawing</span> <span class="pre">Conditions</span> <span class="pre">...</span></code> to get the following dialog box.</p>
+<p><img alt="data with height" src="../omlc.org/classroom/oslotut/simple/xdata6.png" /></p>
+<p>By changing boxes in yellow, a drawing that draws seven rays from the top of the object such as the following can be obtained</p>
+<p><img alt="7 rays" src="https://drive.google.com/uc?export=view&amp;id=1e1oYewKZlt2EQoW-O4TNm7HRKr_UvMQo" /></p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Geometric_Optics_Optical_Systems_Page.html"
+       title="previous chapter">← Optical systems</a>
+  </li>
+  <li class="next">
+    <a href="Geometric_Optics_More_with_OSLO_Page.html"
+       title="next chapter">More with OSLO →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+
+<!-- Mirrored from universe-ity.github.io/Geometric_Optics_Intro_to_OSLO_Page.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Apr 2020 22:21:06 GMT -->
+</html>

@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.universetoday.com	TRUE	/	FALSE	1999999999	__cfduid	d628f3e399ffdb14718532167b7b5e4cf1587507652
+www.universetoday.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+

@@ -1,0 +1,13 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.rvcj.com	TRUE	/	FALSE	1999999999	__cfduid	d9e697a0278bec0d180871d8a285e02331588017679
+www.rvcj.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+.thorlabs.com	TRUE	/	FALSE	1999999999	visid_incap_893434	cAOdi1YFSFWWRF0vGu1krA86p14AAAAAQUIPAAAAAAAFQubI1Vkyxt95nCJH8F7n
+.thorlabs.com	TRUE	/	FALSE	1999999999	nlbi_893434	LE2wD3FjLHLxov4T+lZxEgAAAAB0DL9vDRAyaNuih9hISIoQ
+.thorlabs.com	TRUE	/	FALSE	1999999999	incap_ses_514_893434	ywC4FO+hFlXI8I8rSRgiBw86p14AAAAATQ3h+LV072ynrvDpMtR4tg==
+www.thorlabs.com	TRUE	/	FALSE	1999999999	___utmvmcaukRYk	ZSRwyOPWWdE
+www.thorlabs.com	TRUE	/	FALSE	1999999999	___utmvacaukRYk	cDWvDzM
+www.thorlabs.com	TRUE	/	FALSE	1999999999	___utmvbcaukRYk	HZK
+.photonics.com	TRUE	/	FALSE	1999999999	__cfduid	de066f68603825d5e3b7e8574b85b1b611588017681
+www.photonics.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+
