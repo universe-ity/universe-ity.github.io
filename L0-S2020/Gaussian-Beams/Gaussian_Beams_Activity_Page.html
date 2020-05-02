@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Activity</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/romnnn_sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="prev" title="Interactive applet" href="Gaussian_Beams_Applet_Page.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <div class="home-link-container">
+      <router-link to="index.html" class="home-link">
+      
+        <span class="site-name">Physics 343 Online Labs</span>
+    </router-link>
+  </div>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Search</span>
+    <div class="searchformwrapper">
+      <form autocomplete="off" class="search" action="search.html" method="get">
+        <input type="text" name="q" autocomplete="off" />
+        <input type="submit" value="Go" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#gaussian-beams">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Intro_Page.html" class="reference internal ">Introduction</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Theory_Page.html" class="reference internal ">Theory</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Applet_Page.html" class="reference internal ">Interactive applet</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Activity</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Tasks" class="reference internal">Tasks</a></li>
+                
+                  <li class="toctree-l2"><a href="#Questions" class="reference internal">Questions</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Activity</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Gaussian_Beams_Applet_Page.html"
+       title="previous chapter">← Interactive applet</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="Activity">
+<h1>Activity<a class="headerlink" href="#Activity" title="Permalink to this headline">¶</a></h1>
+<p>In this activity, you will be analysing the virtual knife edge scan data outputted by the Gaussian beam simulation applet (coded in Mathematica). Refer to the previous section for the applet or you can open the applet in a separate tab.</p>
+<div class="admonition note">
+<p class="admonition-title">NOTE</p>
+<p>You can change the sampling rate (i.e. number of points along the z position) in the applet. To do so first go through the plots on a coarser sampling rate and look at the spot size and the knife edge scans. Decide in which regions along the propagation axis you need a finer sampling and in which a coarser sampling is needed. Add more points later if you find in your analysis that you need more..</p>
+</div>
+<div class="section" id="Tasks">
+<h2>Tasks<a class="headerlink" href="#Tasks" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Perform a numerical derivative. Provide a description of the proceedure.</p></li>
+<li><p>Fit the derivative with a Gaussian function. Provide a plot of the derivative and fit.</p></li>
+<li><p>Make a plot of the beam envelope.</p></li>
+</ol>
+</div>
+<div class="section" id="Questions">
+<h2>Questions<a class="headerlink" href="#Questions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>At what <span class="math notranslate nohighlight">\(z\)</span> position is the spot size the smallest?</p></li>
+<li><p>What is the value of the smallest spot size <span class="math notranslate nohighlight">\(w_0\)</span>?</p></li>
+<li><p>What is the divergence angle <span class="math notranslate nohighlight">\(\theta\)</span>?</p></li>
+<li><p>What is the Rayleigh length <span class="math notranslate nohighlight">\(𝑧_𝑅\)</span> of the beam?</p></li>
+<li><p>What is the wavelength <span class="math notranslate nohighlight">\(\lambda\)</span> of the beam?</p></li>
+<li><p>Does the beam power change along the propagation direction? Provide your reasoning.</p></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Gaussian_Beams_Applet_Page.html"
+       title="previous chapter">← Interactive applet</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

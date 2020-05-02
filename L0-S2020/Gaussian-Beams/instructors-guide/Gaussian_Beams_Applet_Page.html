@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Interactive applet</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/romnnn_sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Activity" href="Guide_Gaussian_Beam_Activity_Page.html" />
+  <link rel="prev" title="Computation (Mathematica)" href="Guide_Gaussian_Beams_Computation_Page.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <div class="home-link-container">
+      <router-link to="index.html" class="home-link">
+      
+        <span class="site-name">Physics 343 Online Labs</span>
+    </router-link>
+  </div>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Search</span>
+    <div class="searchformwrapper">
+      <form autocomplete="off" class="search" action="search.html" method="get">
+        <input type="text" name="q" autocomplete="off" />
+        <input type="submit" value="Go" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#gaussian-beams">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Intro_Page.html" class="reference internal ">Introduction</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Theory_Page.html" class="reference internal ">Theory</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beams_Computation_Page.html" class="reference internal ">Computation (Mathematica)</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Interactive applet</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Interactive-applet" class="reference internal">Interactive applet</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beam_Activity_Page.html" class="reference internal ">Activity</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beams_Code_Page.html" class="reference internal ">Code</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Interactive applet</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Guide_Gaussian_Beams_Computation_Page.html"
+       title="previous chapter">← Computation (Mathematica)</a>
+  </li>
+  <li class="next">
+    <a href="Guide_Gaussian_Beam_Activity_Page.html"
+       title="next chapter">Activity →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="Interactive-applet">
+<h1>Interactive applet<a class="headerlink" href="#Interactive-applet" title="Permalink to this headline">¶</a></h1>
+<p>The controls (at the top of the applet) can be expanded by clicking on the + symbol/button on the right side of each slider control. The applet (below) shows the spot size on top. The axis range of this plot can be changed by the bottom slider. A plot of the virtual knife edge scan is shown in the middle and the data for the knife edge scan is in the table at the bottom. The position along the z axis can be changed with the top slider or again by clicking + or - buttons. The number of samples
+(i.e. the number of points) along the propagation axis can be changed by the pulldown menu. The distance (z coordinate) in μm is shown next to the <span class="math notranslate nohighlight">\(z\)</span> slider (and + button). It may be more convenient to open applet in separate tab.</p>
+<hr class="docutils" />
+<iframe src="https://www.wolframcloud.com/obj/494f9ed0-fcbc-427b-aed3-dfa4e10dc26c" style="position: relative; height: 1860px; width: 100%;" frameborder="0"></iframe><hr class="docutils" />
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Guide_Gaussian_Beams_Computation_Page.html"
+       title="previous chapter">← Computation (Mathematica)</a>
+  </li>
+  <li class="next">
+    <a href="Guide_Gaussian_Beam_Activity_Page.html"
+       title="next chapter">Activity →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

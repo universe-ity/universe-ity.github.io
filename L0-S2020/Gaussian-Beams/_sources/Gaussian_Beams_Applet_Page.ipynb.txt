@@ -1,0 +1,52 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Gaussian Beams Applet Page.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "PtIOUP_JtNB4",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Interactive applet"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zP8AJ4X8Ppje",
+        "colab_type": "text"
+      },
+      "source": [
+        "The controls (at the top of the applet) can be expanded by clicking on the <code>+</code> symbol/button on the right side of each slider control. The applet (below) shows the spot size on top. The axis range of  this  plot  can  be  changed  by  the  bottom  slider. A plot of the virtual knife edge scan is shown in the middle and the data for the knife edge scan is in the table at the bottom. The position along the z axis can be changed with the top slider or again by clicking  <code>+</code>  or  <code>-</code> buttons.  The  number  of  samples  (i.e.  the number  of  points)  along  the  propagation  axis  can  be changed by the pulldown menu. The distance (z coordinate) in μm is shown next to the $z$ slider (and <code>+</code> button). It may be more convenient to <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.wolframcloud.com/obj/494f9ed0-fcbc-427b-aed3-dfa4e10dc26c\">open applet in separate tab</a>. "
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7Lqo9QHsMzT5",
+        "colab_type": "text"
+      },
+      "source": [
+        "\n",
+        "---\n",
+        "\n",
+        "<iframe src=\"https://www.wolframcloud.com/obj/494f9ed0-fcbc-427b-aed3-dfa4e10dc26c\" style=\"position: relative; height: 1860px; width: 100%;\" frameborder=\"0\"></iframe>\n",
+        "\n",
+        "---\n"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+.. Physics 343 Online Labs documentation master file, created by
+   sphinx-quickstart on Sat May  2 16:57:28 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Gaussian Beams
+===========================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   Gaussian_Beams_Intro_Page
+   Gaussian_Beams_Theory_Page
+   Gaussian_Beams_Applet_Page
+   Gaussian_Beams_Activity_Page

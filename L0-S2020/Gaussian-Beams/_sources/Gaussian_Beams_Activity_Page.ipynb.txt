@@ -1,0 +1,103 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Gaussian Beams Activity Page.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "r0XF0-qgPg7R",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Activity"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Da5jLShuSWK-",
+        "colab_type": "text"
+      },
+      "source": [
+        "In this activity, you will be analysing the virtual knife edge scan data outputted by the Gaussian beam simulation applet (coded in Mathematica). Refer to the previous section for the applet or you can <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.wolframcloud.com/obj/494f9ed0-fcbc-427b-aed3-dfa4e10dc26c\">open the applet in a separate tab</a>."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MgKLeesIR0kA",
+        "colab_type": "text"
+      },
+      "source": [
+        "\n",
+        "<div class=\"alert alert-info\">\n",
+        "\n",
+        "NOTE\n",
+        "\n",
+        "You can change the sampling rate (i.e. number of points along the z position) in the applet. To do so first go through the plots on a coarser sampling rate and look at the spot size and the knife edge scans. Decide in which regions along the propagation axis you need a finer sampling and in which a coarser sampling is needed. Add more points later if you find in your analysis that you need more..\n",
+        "\n",
+        "</div>\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zrzIHveHNvfN",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Tasks"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wD3XTl9DOehK",
+        "colab_type": "text"
+      },
+      "source": [
+        "1.   Perform a numerical derivative. Provide a description of the proceedure.\n",
+        "2.   Fit the derivative with a Gaussian function. Provide a plot of the derivative and fit.\n",
+        "3.   Make a plot of the beam envelope."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "941V6e_iOfac",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Questions"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wUTo-NUBOh9k",
+        "colab_type": "text"
+      },
+      "source": [
+        "\n",
+        "1.   At what $z$ position is the spot size the smallest?\n",
+        "2.   What is the value of the smallest spot size $w_0$?\n",
+        "3.   What is the divergence angle $\\theta$?\n",
+        "4.   What is the Rayleigh length $𝑧_𝑅$ of the beam?\n",
+        "5.   What is the wavelength $\\lambda$ of the beam?\n",
+        "6.   Does the beam power change along the propagation direction? Provide your reasoning.\n",
+        "\n"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Theory</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/romnnn_sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Computation (Mathematica)" href="Guide_Gaussian_Beams_Computation_Page.html" />
+  <link rel="prev" title="Introduction" href="Gaussian_Beams_Intro_Page.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <div class="home-link-container">
+      <router-link to="index.html" class="home-link">
+      
+        <span class="site-name">Physics 343 Online Labs</span>
+    </router-link>
+  </div>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Search</span>
+    <div class="searchformwrapper">
+      <form autocomplete="off" class="search" action="search.html" method="get">
+        <input type="text" name="q" autocomplete="off" />
+        <input type="submit" value="Go" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#gaussian-beams">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Intro_Page.html" class="reference internal ">Introduction</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Theory</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Gaussian-beam,-beam-waist,-and-diffraction" class="reference internal">Gaussian beam, beam waist, and diffraction</a></li>
+                
+                  <li class="toctree-l2"><a href="#Knife-edge-scan" class="reference internal">Knife edge scan</a></li>
+                
+                  <li class="toctree-l2"><a href="#Numeric-differentiation" class="reference internal">Numeric differentiation</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beams_Computation_Page.html" class="reference internal ">Computation (Mathematica)</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Applet_Page.html" class="reference internal ">Interactive applet</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beam_Activity_Page.html" class="reference internal ">Activity</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beams_Code_Page.html" class="reference internal ">Code</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Theory</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Gaussian_Beams_Intro_Page.html"
+       title="previous chapter">← Introduction</a>
+  </li>
+  <li class="next">
+    <a href="Guide_Gaussian_Beams_Computation_Page.html"
+       title="next chapter">Computation (Mathematica) →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="Theory">
+<h1>Theory<a class="headerlink" href="#Theory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Gaussian-beam,-beam-waist,-and-diffraction">
+<h2>Gaussian beam, beam waist, and diffraction<a class="headerlink" href="#Gaussian-beam,-beam-waist,-and-diffraction" title="Permalink to this headline">¶</a></h2>
+<p>As the Gaussian beam propagates in the longitudinal direction (chosen as z-direction) it will diffract. This of course means that the amplitude of the beams intensity profile and beam width will change and thus, are z-dependent.</p>
+<p>The intensity profile of the Gaussian beam has the following form,</p>
+<p><span class="math">\begin{align} g(x, z) = \frac{\sqrt{2\pi}}{w(z)}\, e^{-2\frac{x^2}{w(z)^2}}\end{align}</span></p>
+<p>where the waist size <span class="math notranslate nohighlight">\(w(z)\)</span> is given by</p>
+<p><span class="math">\begin{align}w(z) = w_0 \sqrt{1 + \left(\frac{z}{z_R}\right)^2} \end{align}</span></p>
+<p>The Raleigh length is $z_R = <span class="math">\frac{\pi w_0^2}{\lambda}</span> $ where <span class="math notranslate nohighlight">\(w_0\)</span> is the minimum beam waist parameter (set by instructor). Note that the wavelength parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is set by the instructor allowing for the diffraction length to be stretched or compressed as desired.</p>
+</div>
+<div class="section" id="Knife-edge-scan">
+<h2>Knife edge scan<a class="headerlink" href="#Knife-edge-scan" title="Permalink to this headline">¶</a></h2>
+<p>One method of determining the intensity profile of a beam of light experimentally, is to perform a knife edge scan. A knife edge scan involves taking something with a sharp edge like a knife or razer blade and translating the edge (in the direction perpendicular to the edge and beam) across the beam so that the edge cuts through the beam until the edge completely blocks the beam. Below is a schematic/drawing
+(<a class="reference external" href="http://imagebank.osa.org/getImage.xqy?img=cCF6ekAuZnVsbCxvZS0xNS0xMC02MzY3LWcwMDE&amp;article=oe-15-10-6367-g001">source</a>)</p>
+<p><img alt="Aberration" src="https://drive.google.com/uc?export=view&amp;id=1H8ydG0gW8M5uLZgifzdC6zbCNqtVofot" /></p>
+<p>As the edge is translated, the power meter measures the intensity of all the light that is not blocked by the edge. This amounts to the sum of the intensity of the beam at each position in the transverse direction ie <span class="math notranslate nohighlight">\(x\)</span>-direction (remember, longitudinal direction is the beam propogation direction). In other words, what is measured is the integral of the Gaussian intensity profile upto the x-position where the edge starts (blocking the light).</p>
+<p>The integral of Gaussian intensity profile at the beginning of this section is,</p>
+<p><span class="math">\begin{align}k(x, z) = \frac{1}{2}\left[ 1+ erf \left(\sqrt{2}\frac{x}{w(z)}\right)  \right]\end{align}</span></p>
+<p>Since taking the derivative should give back the original Gaussian, then obtaining the intensity profile from the knife edge scan data (power measurements) should amount to just determing the slope at each x-position. Numerically, one can use a differencing method to obtain the slope at each point.</p>
+</div>
+<div class="section" id="Numeric-differentiation">
+<h2>Numeric differentiation<a class="headerlink" href="#Numeric-differentiation" title="Permalink to this headline">¶</a></h2>
+<p>Since it is expected that taking the derviative of the knife edge scan of a Gaussian beam will produce a Gaussian and since a gaussian is symmetric, it may be best to choose the central differencing method of the three simplest differencing schemes (forward, backward, central) as the way to obtain the slope of the knife edge scan at the various x-positions. Nevertheless, the three schemes will be described below</p>
+<div class="section" id="Forward-differencing-method">
+<h3>Forward differencing method<a class="headerlink" href="#Forward-differencing-method" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align} f'(x_i) = \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i+1} - x_i)\rightarrow \, 0}
+\ \frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i}\\ \notag \\
+&\approx
+\ \frac{f(x_{i+1}) - f(x_{i})}{x_{i+1} - x_{i}}
+\end{align}</span></p>
+</div>
+<div class="section" id="Backward-differencing-method">
+<h3>Backward differencing method<a class="headerlink" href="#Backward-differencing-method" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align} f'(x_i) = \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i} - x_{i-1})\rightarrow \, 0}
+\ \frac{f(x_{i}) - f(x_{i-1})}{x_{i} - x_{i-1}}\\ \notag \\
+&\approx
+\ \frac{f(x_{i}) - f(x_{i-1})}{x_{i} - x_{i-1}}
+\end{align}</span></p>
+</div>
+<div class="section" id="Central-differencing-method">
+<h3>Central differencing method<a class="headerlink" href="#Central-differencing-method" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align} f'(x_i) = \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i+1} - x_{i-1})\rightarrow \, 0}
+\ \frac{f(x_{i+1}) - f(x_{i-1})}{2(x_{i+1} - x_{i-1})}\\ \notag \\
+&\approx
+\ \frac{f(x_{i+1}) - f(x_{i-1})}{2(x_{i+1} - x_{i-1})}
+\end{align}</span></p>
+<p>The approximations of the derivatives above are obtained by simply dropping the limits. These approximations get better as the difference in the denominator is smaller. In other words, the smaller the separation between the x-positions where measurements were taken, the closer the approximation is to the analytical derivative.</p>
+<p>It is commonly noted, when introducting the centered derivative (sometimes refered to as central differencing), that it is equivalent to the average of the forward derivative with the backward derivative</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Gaussian_Beams_Intro_Page.html"
+       title="previous chapter">← Introduction</a>
+  </li>
+  <li class="next">
+    <a href="Guide_Gaussian_Beams_Computation_Page.html"
+       title="next chapter">Computation (Mathematica) →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

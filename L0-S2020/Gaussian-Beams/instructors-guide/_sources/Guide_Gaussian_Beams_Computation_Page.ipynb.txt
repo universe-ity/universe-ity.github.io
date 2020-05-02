@@ -1,0 +1,118 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Guide Gaussian Beams Computation Page.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "iOqF8LLK1V6C",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Computation (Mathematica)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hphMHYbX2CAb",
+        "colab_type": "text"
+      },
+      "source": [
+        "Once the parameters $w_0$ and $\\lambda$ are chosen, then the first function that needs to be computed is $w(z)$. Choosing $w_0=5$ and $\\lambda = 0.5$ and defining $w(z)$ in mathematica using the equation above as follows\n",
+        "\n",
+        "```\n",
+        "w[z_] := w0*Sqrt[1 + (z/zR)^2];\n",
+        "```\n",
+        "\n",
+        "and plotting gives,"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3COAZC_EUT1y",
+        "colab_type": "text"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "<iframe src=\"https://www.wolframcloud.com/obj/25d927a6-6e36-42bb-8db1-83e6b19b2926\" style=\"position: relative; height: 1960px; width: 100%;\" frameborder=\"0\" ></iframe>\n",
+        "\n",
+        "---"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ESl7KCOICnCi",
+        "colab_type": "text"
+      },
+      "source": [
+        "With the definition of $w(z)$, the Gaussian intensity profile can now be defined in mathematica as follows,\n",
+        "\n",
+        "```\n",
+        "Int[z_] := 1*Sqrt[2/Pi]/w[z]*Exp[-2*x^2/w[z]^2]\n",
+        "```\n",
+        "and plotting this gives"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0rwKsc7sUcbd",
+        "colab_type": "text"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "<iframe src=\"https://www.wolframcloud.com/obj/0e76aa87-71e8-4c9e-9b32-0aa82f2d02ef\" style=\"position: relative; height: 360px; width: 100%;\" frameborder=\"0\"></iframe>\n",
+        "\n",
+        "---"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kxhZn5ePFp9z",
+        "colab_type": "text"
+      },
+      "source": [
+        "Note that from the plot of the waist, it is clear that minimum waist is a $z=0$ and therefore we expect the peak of the gaussian to be maximum at this point ($z=0$). You can check that this is true in the applet above.\n",
+        "\n",
+        "Additionally, the knife edge scan function can be defined in mathematica as follows\n",
+        "\n",
+        "```\n",
+        "K [z_, x_] = 1/2*( 1 + Erf[Sqrt[2]*(x)/w[z]]);\n",
+        "```\n",
+        "\n",
+        "and plotting this gives"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "nNq17vyuUl1K",
+        "colab_type": "text"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "<iframe src=\"https://www.wolframcloud.com/obj/aba9d075-d57e-47f4-89a1-9b8bae9ba14c\" style=\"position: relative; height: 1560px; width: 100%;\" frameborder=\"0\"></iframe>\n",
+        "\n",
+        "---"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Guide Gaussian Beams Code Page.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VHp1S2jLzSaz",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Code"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wBL2-2oCkDGB",
+        "colab_type": "text"
+      },
+      "source": [
+        "Shown below is the Mathematica code used to generate the applets."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bayLic_DA4WS",
+        "colab_type": "text"
+      },
+      "source": [
+        "```\n",
+        "Clear[\"Global`*\"]\n",
+        "lambda = 0.500;\n",
+        "w0 = 5;\n",
+        "zR = Pi*w0^2/lambda;\n",
+        "w[z_] := w0*Sqrt[1 + (z/zR)^2];\n",
+        "(*----------------------Anas's Additions: Added table to plot for comparison with Activity results-----------------*)\n",
+        "CloudDeploy[Column[{\n",
+        "   Style[\"Waist values\", Bold],\n",
+        "   Plot[w[z], {z, -20*zR, 20*zR}, ImageSize -> Medium],\n",
+        "   Style[ \"\"], Style[ \"\"],\n",
+        "   Style[\"Values\", Bold], Style[\"    z          w[z]\", Bold],\n",
+        "   Grid[Table[{z, w[z]}, {z, -20*zR, 20*zR, 40*zR/100}]]\n",
+        "   }], Permissions -> \"Public\"]\n",
+        "(*----------------------------------------------------------------------------------------------------------*)\n",
+        "\n",
+        "\n",
+        "Int[z_] := 1*Sqrt[2/Pi]/w[z]*Exp[-2*x^2/w[z]^2];\n",
+        "CloudDeploy[\n",
+        " Manipulate[\n",
+        "  Plot[Int[z], {x, -2*w[z], 2*w[z]}], {z, -20*zR, 20*zR, zR/4}], \n",
+        " Permissions -> \"Public\"]\n",
+        "Int3D[z_] := 1*Sqrt[2/Pi]/w[z]*Exp[-2*(x^2 + y^2)/w[z]^2];\n",
+        "(*Manipulate[DensityPlot[Int3D[z],{x,-2*w[z],2*w[z]},{y,-2*w[z],2*w[z]\\\n",
+        "},ImageSize\\[Rule] Medium,PlotRange\\[Rule] \\\n",
+        "{{-125,125},{-125,125},{0,1*Sqrt[2/Pi]/w[0]}},ColorFunction\\[Rule]\\\n",
+        "\"Rainbow\",PlotLegends\\[Rule]Automatic],{z,-20*zR,20*zR,zR/sampling}]*)\n",
+        "\n",
+        "\n",
+        "P [z_, x_] = 1/2*( 1 + Erf[Sqrt[2]*(x)/w[z]]);\n",
+        "CloudDeploy[\n",
+        " Manipulate[Column[{\n",
+        "    (*Plot3D[Int3D[z],{x,-2*w[z],2*w[z]},{y,-2*w[z],2*w[z]},\n",
+        "    ImageSize\\[Rule] Medium,PlotRange\\[Rule] {{-125,125},{-125,\n",
+        "    125},{0,1*Sqrt[2/Pi]/w[0]}},ColorFunction\\[Rule]\"Rainbow\",\n",
+        "    PlotLegends\\[Rule]Automatic,Mesh->None],*)\n",
+        "    Style[\"Knife Edge Scan\", Bold],\n",
+        "    Plot[P[z, x], {x, -2*w[z], 2*w[z]}, ImageSize -> Medium, \n",
+        "     PlotRange -> {{-125, 125}, Automatic}],\n",
+        "    Style[ \"\"], Style[ \"\"],\n",
+        "    Style[\"Data\", Bold], Style[\"x          Intensity\", Bold],\n",
+        "    Grid[Table[{x, P [z, x]}, {x, -2*w[z], 2*w[z], 6*w[z]/100}]]}],\n",
+        "  {z, -20*zR, 20*zR, 40*zR/s, \n",
+        "   Appearance -> \"Labeled\"}, {{s, 40, \"Number of Samples\"}, {2, 4, 5, \n",
+        "    10, 40, 200, 400, 800}}]\n",
+        " , Permissions -> \"Public\"]\n",
+        "(*====================================\\[Equal] Anas's Additions: Activity 1 ===========================================*)\n",
+        "G[z_, x_] = ND[P [z, x], x];\n",
+        "H[z_, x_] = N[D[P [z, x], x]];\n",
+        "model[x_] = ampl*Evaluate[PDF[NormalDistribution[x0, waist/2], x]];\n",
+        "altModel[x_] := ampl* Exp[-2*(x - x0)^2/waist^2]\n",
+        "\n",
+        "CloudDeploy[Manipulate[Column[{\n",
+        "    Style[\"Derivative of Knife Edge Scan\", Bold],\n",
+        "    Plot[H[z, x], {x, -2*w[z], 2*w[z]}, ImageSize -> Medium],\n",
+        "    Style[\" \"],\n",
+        "    Style[\"Data\", Bold], Style[\"x          Derivative\", Bold],\n",
+        "    Grid[mydata = \n",
+        "      Table[{x, H [z, x]}, {x, -2*w[z], 2*w[z], 6*w[z]/100}] ],\n",
+        "    Style[\" \"],\n",
+        "    Style[\"Fit\", Bold],\n",
+        "    FindFit[mydata, \n",
+        "     model[x], {{ampl, FindPeaks[mydata[[All, 2]]][[1, 2]]}, {x0, \n",
+        "       0}, {waist, 50}}, x],\n",
+        "    FindFit[mydata, \n",
+        "     altModel[\n",
+        "      x], {{ampl, FindPeaks[mydata[[All, 2]]][[1, 2]]}, {x0, \n",
+        "       0}, {waist, 50}}, x]\n",
+        "    }, Dividers -> {False, {-4 -> Blue}}], {z, -20*zR, 20*zR, \n",
+        "   40*zR/800, Appearance -> \"Labeled\"}],\n",
+        " Permissions -> \"Public\"]\n",
+        "(*=================================================================================================*)\n",
+        "CloudDeploy[\n",
+        " Manipulate[Column[{\n",
+        "    Style[\"Spot Size\", Bold],\n",
+        "    Plot3D[Int3D[z], {x, -2*w[z], 2*w[z]}, {y, -2*w[z], 2*w[z]}, \n",
+        "     ImageSize -> Medium, \n",
+        "     PlotRange -> {{-axis, axis}, {-axis, axis}, {0, \n",
+        "        1*Sqrt[2/Pi]/w[z]}}, PlotPoints -> 30,  \n",
+        "     ColorFunction -> \"Rainbow\", PlotLegends -> Automatic, \n",
+        "     Mesh -> None],\n",
+        "    Style[\"Knife Edge Scan\", Bold],\n",
+        "    Plot[P[z, x], {x, -2*w[z], 2*w[z]}, ImageSize -> Medium, \n",
+        "     PlotRange -> {{-axis, axis}, Automatic}],\n",
+        "    Style[ \"\"], Style[ \"\"],\n",
+        "    Style[\"Data\", Bold], Style[\"x          Intensity\", Bold],\n",
+        "    Grid[Table[{x, P [z, x]}, {x, -2*w[z], 2*w[z], 6*w[z]/100}]]}],\n",
+        "  {{s, 800, \"Number of Samples\"}, {2, 4, 5, 10, 40, 200, 400, \n",
+        "    800}}, {z, -20*zR, 20*zR, 40*zR/800, \n",
+        "   Appearance -> \"Labeled\"}, {{axis, 125, \"Spot Size Axis Range\"} , 0,\n",
+        "    125, Appearance -> \"Labeled\"}]\n",
+        " , Permissions -> \"Public\"]\n",
+        "```"
+      ]
+    }
+  ]
+}

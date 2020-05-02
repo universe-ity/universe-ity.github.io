@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Activity</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/romnnn_sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Code" href="Guide_Gaussian_Beams_Code_Page.html" />
+  <link rel="prev" title="Interactive applet" href="Gaussian_Beams_Applet_Page.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <div class="home-link-container">
+      <router-link to="index.html" class="home-link">
+      
+        <span class="site-name">Physics 343 Online Labs</span>
+    </router-link>
+  </div>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Search</span>
+    <div class="searchformwrapper">
+      <form autocomplete="off" class="search" action="search.html" method="get">
+        <input type="text" name="q" autocomplete="off" />
+        <input type="submit" value="Go" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#gaussian-beams">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Intro_Page.html" class="reference internal ">Introduction</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Theory_Page.html" class="reference internal ">Theory</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beams_Computation_Page.html" class="reference internal ">Computation (Mathematica)</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Applet_Page.html" class="reference internal ">Interactive applet</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Activity</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#1.1-Perform-a-numerical-derivative." class="reference internal">1.1 Perform a numerical derivative.</a></li>
+                
+                  <li class="toctree-l2"><a href="#1.2-Fit-the-derivative-with-a-Gaussian-function" class="reference internal">1.2 Fit the derivative with a Gaussian function</a></li>
+                
+                  <li class="toctree-l2"><a href="#1.3-Make-a-plot-of-the-beam-envelope" class="reference internal">1.3 Make a plot of the beam envelope</a></li>
+                
+                  <li class="toctree-l2"><a href="#Questions" class="reference internal">Questions</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beams_Code_Page.html" class="reference internal ">Code</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Activity</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Gaussian_Beams_Applet_Page.html"
+       title="previous chapter">← Interactive applet</a>
+  </li>
+  <li class="next">
+    <a href="Guide_Gaussian_Beams_Code_Page.html"
+       title="next chapter">Code →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 7ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="Activity">
+<h1>Activity<a class="headerlink" href="#Activity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="1.1-Perform-a-numerical-derivative.">
+<h2>1.1 Perform a numerical derivative.<a class="headerlink" href="#1.1-Perform-a-numerical-derivative." title="Permalink to this headline">¶</a></h2>
+<p>Mathematica provides a function for performing the derivative that uses a central differencing scheme. Using this function on the knife edge function in mathematica as follows,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span><span class="p">[</span><span class="n">z_</span><span class="p">,</span> <span class="n">x_</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span><span class="p">[</span><span class="n">D</span><span class="p">[</span><span class="n">K</span> <span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">]];</span>
+</pre></div>
+</div>
+<p>gives an approximation of the x-derivative of <span class="math notranslate nohighlight">\(k(x, z)\)</span> (the knife edge function). A plot of this function and the table of values is shown in the applet at the end of this section</p>
+</div>
+<div class="section" id="1.2-Fit-the-derivative-with-a-Gaussian-function">
+<h2>1.2 Fit the derivative with a Gaussian function<a class="headerlink" href="#1.2-Fit-the-derivative-with-a-Gaussian-function" title="Permalink to this headline">¶</a></h2>
+<p>Mathematica’s “FindFit” function can be used to fit a user defined function to the users data. This function can be used to fit a generic gaussian to the results of taking the derivative of the knife edge data. Doing this correctly can produce good estimations of the waist and amplitude of the actually intensity profile being studied in the experiment.</p>
+<p><strong>Note: The accuracy of the results produced here can be compared to data obtained from the original analytical functions in the Computation section.</strong></p>
+<p>One can fit Mathematica’s “NormalDistribution” function to the data as follows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="p">[</span><span class="n">x_</span><span class="p">]</span> <span class="o">=</span> <span class="n">ampl</span><span class="o">*</span><span class="n">Evaluate</span><span class="p">[</span><span class="n">PDF</span><span class="p">[</span><span class="n">NormalDistribution</span><span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">waist</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">]];</span>
+<span class="n">FindFit</span><span class="p">[</span><span class="n">mydata</span><span class="p">,</span> <span class="n">model</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="p">{{</span><span class="n">ampl</span><span class="p">,</span> <span class="n">FindPeaks</span><span class="p">[</span><span class="n">mydata</span><span class="p">[[</span><span class="n">All</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]},</span> <span class="p">{</span><span class="n">x0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">waist</span><span class="p">,</span> <span class="mi">50</span><span class="p">}},</span> <span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To get the best results, decent estimates for amplitude and waist need to be provided. The waist can be approximated any number of ways. However, the best way to approximate the amplitude is to use the data! The amplitude should be near the maximum amplitude value in the data table. “FindPeaks” is the Mathematica function used to obtain the largest value.</p>
+<p>Unfortunately, although fitting to the “NormalDistribution” function produces a value for the waist that is very close to the actual value, the amplitude produced is terribly off the mark.</p>
+<p>An approach that produces much better results overall, is to manually define the Gaussian model that will be used for fitting to the data. Doing so,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">altModel</span><span class="p">[</span><span class="n">x_</span><span class="p">]</span> <span class="o">:=</span> <span class="n">ampl</span><span class="o">*</span> <span class="n">Exp</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">waist</span><span class="o">^</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">FindFit</span><span class="p">[</span><span class="n">mydata</span><span class="p">,</span> <span class="n">altModel</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="p">{{</span><span class="n">ampl</span><span class="p">,</span> <span class="n">FindPeaks</span><span class="p">[</span><span class="n">mydata</span><span class="p">[[</span><span class="n">All</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]},</span> <span class="p">{</span><span class="n">x0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">waist</span><span class="p">,</span> <span class="mi">50</span><span class="p">}},</span> <span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The results of fitting to the two models above can be found (in order) at the bottom of the applet below,</p>
+<hr class="docutils" />
+<iframe src="https://www.wolframcloud.com/obj/b239d7f5-cbeb-4d7b-9dcd-3c10d5ae504f" style="position: relative; height: 1600px; width: 100%;" frameborder="0"></iframe></div>
+<hr class="docutils" />
+<div class="section" id="1.3-Make-a-plot-of-the-beam-envelope">
+<h2>1.3 Make a plot of the beam envelope<a class="headerlink" href="#1.3-Make-a-plot-of-the-beam-envelope" title="Permalink to this headline">¶</a></h2>
+<p>The goal here is to plot the waist, which is obtained from the fit-results in the previous section, as a function of <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>One thing to consider is how many samples and where in <span class="math notranslate nohighlight">\(z\)</span> should the samples be taken in order to produce a plot that displays the important features of <span class="math notranslate nohighlight">\(w(z)\)</span>. It can be presumed from the nature of diffraction that the greatest curvature in the waist is near its minimum. Far away form its minimum, <span class="math notranslate nohighlight">\(w(z)\)</span> is linear. Only two points are needed to represent a line while a curve may need many more points.</p>
+<p><strong>Note: Students should realize that more points are needed around :math:`z=0`. Also, student can use any number of ways to create the plot.</strong></p>
+<div class="section" id="Plotting-with-Python">
+<h3>Plotting with Python<a class="headerlink" href="#Plotting-with-Python" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>import numpy as np
+import matplotlib.pyplot as plt
+
+z = np.array([-3141.59, -2073.45, -1500.11, -997.456, -596.903, -400.553, -329.867, -298.451, -250, -225, -200, -175, -150, -125, -100, -80, -70, -60, -50, -40, -30, -20, -15, -10, -5, 0 ])
+w = np.array([100.25, 66.1891, 48.0111, 32.1413, 19.6469, 13.6953, 11.6297, 10.7355, 9.39818, 8.73464, 8.09497, 7.48529, 6.91356, 6.38995, 5.92724, 5.61111, 5.47401, 5.35234, 5.24719, 5.15957, 5.09037, 5.04037, 5.02275, 5.01012, 5.00253, 5 ])
+
+z = np.append(z,-1*np.flip(z)[1:] )  #created the full range using the mirror of z
+w = np.append(w,np.flip(w)[1:])
+
+fig = plt.figure(figsize=(10, 6), dpi= 80, facecolor=&#39;w&#39;, edgecolor=&#39;k&#39;)
+plt.plot(z, w, &#39;ko--&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;matplotlib.lines.Line2D at 0x7f554acb7a20&gt;]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/Guide_Gaussian_Beam_Activity_Page_9_1.png" src="_images/Guide_Gaussian_Beam_Activity_Page_9_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Questions">
+<h2>Questions<a class="headerlink" href="#Questions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>At what :math:`z` position is the spot size the smallest?</strong></p></li>
+</ol>
+<blockquote>
+<div><p>The spot size is the smallest at the <span class="math notranslate nohighlight">\(z\)</span> position where the waist is the smallest which is at <span class="math notranslate nohighlight">\(z=0\)</span>. Note that here, “waist” is synonymous with “spot size.”</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>What is the value of the smallest spot size :math:`w_0`?</strong></p></li>
+</ol>
+<blockquote>
+<div><p>The value of the smallest spot size is 5.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><strong>What is the divergence angle θ?</strong></p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>z_fit_coord = np.array([0, 2073.45, 3141.59])
+w_fit_coord = np.array([5, 66.1891, 100.25])
+
+#Get slope and intercept for the linear fit line
+m, b = np.polyfit(z_fit_coord, w_fit_coord, 1)
+
+fig = plt.figure(figsize=(10, 6), dpi= 80, facecolor=&#39;w&#39;, edgecolor=&#39;k&#39;)
+plt.plot(z_fit_coord, w_fit_coord, &#39;ko&#39;, z_fit_coord, m*z_fit_coord + b, &#39;b--&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;matplotlib.lines.Line2D at 0x7f554a800278&gt;,
+ &lt;matplotlib.lines.Line2D at 0x7f554a8003c8&gt;]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/Guide_Gaussian_Beam_Activity_Page_14_1.png" src="_images/Guide_Gaussian_Beam_Activity_Page_14_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>import math as math
+
+divergence_angle = math.degrees(math.atan(m))
+
+#Print the result
+&quot;  A. Divergence angle is &quot; + str(divergence_angle) + &quot; degrees.&quot;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;  A. Divergence angle is 1.730321593279073 degrees.&#39;
+</pre></div></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>What is the Rayleigh length :math:`𝑧_𝑅` of the beam?</strong></p></li>
+</ol>
+<blockquote>
+<div><p>The Rayleigh length is <span class="math notranslate nohighlight">\(z_R = \frac{\pi w^2_0}{\lambda}\)</span>. The value can be determined from the data using the following equation, <span class="math">\begin{align}
+w(z) &= w_0 \sqrt{1 + \left(\frac{z}{z_R}\right)^2}\\
+&\Downarrow \\
+z_R &= \frac{z}{\sqrt{\left(\frac{w}{w_0}\right)^2 - 1}}
+\end{align}</span></p>
+</div></blockquote>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>#Calculate the square root quantity
+w_0 = 5
+temp_var = w/w_0
+temp_var = temp_var*temp_var - 1.0
+temp_var = np.sqrt(temp_var)
+
+#Remove any zeros from what will go in the denominator
+#and remove the corresponding position
+index_of_zero = np.argwhere(temp_var == 0)[0][0]
+z_alt = np.delete(z, index_of_zero)
+temp_var = np.delete(temp_var, index_of_zero)
+
+#Put it all together to get z_R from each individual point
+#then average all the z_R values to get one value.
+z_R = np.abs(z_alt/temp_var)
+z_R_avg = np.mean(z_R)
+
+&quot;  A. The Rayleigh length is &quot; + str(z_R_avg) + &quot;.&quot;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<blockquote>
+<div><div class="highlight"><pre>
+&#39;  A. The Rayleigh length is 157.07434013198065.&#39;
+</pre></div></div></blockquote>
+<p>Using the instructors parameters the exact answer should be 157.07963268.</p>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>What is the wavelength 𝜆 of the beam?</strong></p></li>
+</ol>
+<blockquote>
+<div><p>The wavelength of the beam is</p>
+</div></blockquote>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>lambda_1 = (math.pi*w_0**2)/z_R_avg
+lambda_1
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.5000168472695941
+</pre></div></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Does the beam power change along the propagation direction?</strong></p></li>
+</ol>
+<blockquote>
+<div><p>No.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Gaussian_Beams_Applet_Page.html"
+       title="previous chapter">← Interactive applet</a>
+  </li>
+  <li class="next">
+    <a href="Guide_Gaussian_Beams_Code_Page.html"
+       title="next chapter">Code →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

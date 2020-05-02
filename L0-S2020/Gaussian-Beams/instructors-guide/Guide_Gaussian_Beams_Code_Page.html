@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Code</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/romnnn_sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="prev" title="Activity" href="Guide_Gaussian_Beam_Activity_Page.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <div class="home-link-container">
+      <router-link to="index.html" class="home-link">
+      
+        <span class="site-name">Physics 343 Online Labs</span>
+    </router-link>
+  </div>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Search</span>
+    <div class="searchformwrapper">
+      <form autocomplete="off" class="search" action="search.html" method="get">
+        <input type="text" name="q" autocomplete="off" />
+        <input type="submit" value="Go" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#gaussian-beams">Contents:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Intro_Page.html" class="reference internal ">Introduction</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Theory_Page.html" class="reference internal ">Theory</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beams_Computation_Page.html" class="reference internal ">Computation (Mathematica)</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Gaussian_Beams_Applet_Page.html" class="reference internal ">Interactive applet</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="Guide_Gaussian_Beam_Activity_Page.html" class="reference internal ">Activity</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Code</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Code" class="reference internal">Code</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Code</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Guide_Gaussian_Beam_Activity_Page.html"
+       title="previous chapter">← Activity</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="Code">
+<h1>Code<a class="headerlink" href="#Code" title="Permalink to this headline">¶</a></h1>
+<p>Shown below is the Mathematica code used to generate the applets.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Clear</span><span class="p">[</span><span class="s2">&quot;Global`*&quot;</span><span class="p">]</span>
+<span class="k">lambda</span> <span class="o">=</span> <span class="mf">0.500</span><span class="p">;</span>
+<span class="n">w0</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">zR</span> <span class="o">=</span> <span class="n">Pi</span><span class="o">*</span><span class="n">w0</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="k">lambda</span><span class="p">;</span>
+<span class="n">w</span><span class="p">[</span><span class="n">z_</span><span class="p">]</span> <span class="o">:=</span> <span class="n">w0</span><span class="o">*</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">zR</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">];</span>
+<span class="p">(</span><span class="o">*----------------------</span><span class="n">Anas</span><span class="s1">&#39;s Additions: Added table to plot for comparison with Activity results-----------------*)</span>
+<span class="n">CloudDeploy</span><span class="p">[</span><span class="n">Column</span><span class="p">[{</span>
+   <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Waist values&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+   <span class="n">Plot</span><span class="p">[</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="p">{</span><span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">},</span> <span class="n">ImageSize</span> <span class="o">-&gt;</span> <span class="n">Medium</span><span class="p">],</span>
+   <span class="n">Style</span><span class="p">[</span> <span class="s2">&quot;&quot;</span><span class="p">],</span> <span class="n">Style</span><span class="p">[</span> <span class="s2">&quot;&quot;</span><span class="p">],</span>
+   <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Values&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span> <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;    z          w[z]&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+   <span class="n">Grid</span><span class="p">[</span><span class="n">Table</span><span class="p">[{</span><span class="n">z</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},</span> <span class="p">{</span><span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">40</span><span class="o">*</span><span class="n">zR</span><span class="o">/</span><span class="mi">100</span><span class="p">}]]</span>
+   <span class="p">}],</span> <span class="n">Permissions</span> <span class="o">-&gt;</span> <span class="s2">&quot;Public&quot;</span><span class="p">]</span>
+<span class="p">(</span><span class="o">*----------------------------------------------------------------------------------------------------------*</span><span class="p">)</span>
+
+
+<span class="n">Int</span><span class="p">[</span><span class="n">z_</span><span class="p">]</span> <span class="o">:=</span> <span class="mi">1</span><span class="o">*</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="n">Pi</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">*</span><span class="n">Exp</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">CloudDeploy</span><span class="p">[</span>
+ <span class="n">Manipulate</span><span class="p">[</span>
+  <span class="n">Plot</span><span class="p">[</span><span class="n">Int</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]}],</span> <span class="p">{</span><span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="n">zR</span><span class="o">/</span><span class="mi">4</span><span class="p">}],</span>
+ <span class="n">Permissions</span> <span class="o">-&gt;</span> <span class="s2">&quot;Public&quot;</span><span class="p">]</span>
+<span class="n">Int3D</span><span class="p">[</span><span class="n">z_</span><span class="p">]</span> <span class="o">:=</span> <span class="mi">1</span><span class="o">*</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="n">Pi</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">*</span><span class="n">Exp</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span><span class="p">];</span>
+<span class="p">(</span><span class="o">*</span><span class="n">Manipulate</span><span class="p">[</span><span class="n">DensityPlot</span><span class="p">[</span><span class="n">Int3D</span><span class="p">[</span><span class="n">z</span><span class="p">],{</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},{</span><span class="n">y</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span>\
+<span class="p">},</span><span class="n">ImageSize</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span> <span class="n">Medium</span><span class="p">,</span><span class="n">PlotRange</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span> \
+<span class="p">{{</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span><span class="mi">125</span><span class="p">},{</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span><span class="mi">125</span><span class="p">},{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="n">Pi</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]}},</span><span class="n">ColorFunction</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span>\
+<span class="s2">&quot;Rainbow&quot;</span><span class="p">,</span><span class="n">PlotLegends</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span><span class="n">Automatic</span><span class="p">],{</span><span class="n">z</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span><span class="n">zR</span><span class="o">/</span><span class="n">sampling</span><span class="p">}]</span><span class="o">*</span><span class="p">)</span>
+
+
+<span class="n">P</span> <span class="p">[</span><span class="n">z_</span><span class="p">,</span> <span class="n">x_</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">Erf</span><span class="p">[</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]]);</span>
+<span class="n">CloudDeploy</span><span class="p">[</span>
+ <span class="n">Manipulate</span><span class="p">[</span><span class="n">Column</span><span class="p">[{</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">Plot3D</span><span class="p">[</span><span class="n">Int3D</span><span class="p">[</span><span class="n">z</span><span class="p">],{</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},{</span><span class="n">y</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},</span>
+    <span class="n">ImageSize</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span> <span class="n">Medium</span><span class="p">,</span><span class="n">PlotRange</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span> <span class="p">{{</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span><span class="mi">125</span><span class="p">},{</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span>
+    <span class="mi">125</span><span class="p">},{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="n">Pi</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]}},</span><span class="n">ColorFunction</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span><span class="s2">&quot;Rainbow&quot;</span><span class="p">,</span>
+    <span class="n">PlotLegends</span>\<span class="p">[</span><span class="n">Rule</span><span class="p">]</span><span class="n">Automatic</span><span class="p">,</span><span class="n">Mesh</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">],</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Knife Edge Scan&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">Plot</span><span class="p">[</span><span class="n">P</span><span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},</span> <span class="n">ImageSize</span> <span class="o">-&gt;</span> <span class="n">Medium</span><span class="p">,</span>
+     <span class="n">PlotRange</span> <span class="o">-&gt;</span> <span class="p">{{</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span> <span class="mi">125</span><span class="p">},</span> <span class="n">Automatic</span><span class="p">}],</span>
+    <span class="n">Style</span><span class="p">[</span> <span class="s2">&quot;&quot;</span><span class="p">],</span> <span class="n">Style</span><span class="p">[</span> <span class="s2">&quot;&quot;</span><span class="p">],</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span> <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;x          Intensity&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">Grid</span><span class="p">[</span><span class="n">Table</span><span class="p">[{</span><span class="n">x</span><span class="p">,</span> <span class="n">P</span> <span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">]},</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">6</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">}]]}],</span>
+  <span class="p">{</span><span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">40</span><span class="o">*</span><span class="n">zR</span><span class="o">/</span><span class="n">s</span><span class="p">,</span>
+   <span class="n">Appearance</span> <span class="o">-&gt;</span> <span class="s2">&quot;Labeled&quot;</span><span class="p">},</span> <span class="p">{{</span><span class="n">s</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;Number of Samples&quot;</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">}}]</span>
+ <span class="p">,</span> <span class="n">Permissions</span> <span class="o">-&gt;</span> <span class="s2">&quot;Public&quot;</span><span class="p">]</span>
+<span class="p">(</span><span class="o">*====================================</span>\<span class="p">[</span><span class="n">Equal</span><span class="p">]</span> <span class="n">Anas</span><span class="s1">&#39;s Additions: Activity 1 ===========================================*)</span>
+<span class="n">G</span><span class="p">[</span><span class="n">z_</span><span class="p">,</span> <span class="n">x_</span><span class="p">]</span> <span class="o">=</span> <span class="n">ND</span><span class="p">[</span><span class="n">P</span> <span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">];</span>
+<span class="n">H</span><span class="p">[</span><span class="n">z_</span><span class="p">,</span> <span class="n">x_</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span><span class="p">[</span><span class="n">D</span><span class="p">[</span><span class="n">P</span> <span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">]];</span>
+<span class="n">model</span><span class="p">[</span><span class="n">x_</span><span class="p">]</span> <span class="o">=</span> <span class="n">ampl</span><span class="o">*</span><span class="n">Evaluate</span><span class="p">[</span><span class="n">PDF</span><span class="p">[</span><span class="n">NormalDistribution</span><span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">waist</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="n">x</span><span class="p">]];</span>
+<span class="n">altModel</span><span class="p">[</span><span class="n">x_</span><span class="p">]</span> <span class="o">:=</span> <span class="n">ampl</span><span class="o">*</span> <span class="n">Exp</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">/</span><span class="n">waist</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">CloudDeploy</span><span class="p">[</span><span class="n">Manipulate</span><span class="p">[</span><span class="n">Column</span><span class="p">[{</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Derivative of Knife Edge Scan&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">Plot</span><span class="p">[</span><span class="n">H</span><span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},</span> <span class="n">ImageSize</span> <span class="o">-&gt;</span> <span class="n">Medium</span><span class="p">],</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">],</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span> <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;x          Derivative&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">Grid</span><span class="p">[</span><span class="n">mydata</span> <span class="o">=</span>
+      <span class="n">Table</span><span class="p">[{</span><span class="n">x</span><span class="p">,</span> <span class="n">H</span> <span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">]},</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">6</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">}]</span> <span class="p">],</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">],</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Fit&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">FindFit</span><span class="p">[</span><span class="n">mydata</span><span class="p">,</span>
+     <span class="n">model</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="p">{{</span><span class="n">ampl</span><span class="p">,</span> <span class="n">FindPeaks</span><span class="p">[</span><span class="n">mydata</span><span class="p">[[</span><span class="n">All</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]},</span> <span class="p">{</span><span class="n">x0</span><span class="p">,</span>
+       <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">waist</span><span class="p">,</span> <span class="mi">50</span><span class="p">}},</span> <span class="n">x</span><span class="p">],</span>
+    <span class="n">FindFit</span><span class="p">[</span><span class="n">mydata</span><span class="p">,</span>
+     <span class="n">altModel</span><span class="p">[</span>
+      <span class="n">x</span><span class="p">],</span> <span class="p">{{</span><span class="n">ampl</span><span class="p">,</span> <span class="n">FindPeaks</span><span class="p">[</span><span class="n">mydata</span><span class="p">[[</span><span class="n">All</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]][[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]},</span> <span class="p">{</span><span class="n">x0</span><span class="p">,</span>
+       <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">waist</span><span class="p">,</span> <span class="mi">50</span><span class="p">}},</span> <span class="n">x</span><span class="p">]</span>
+    <span class="p">},</span> <span class="n">Dividers</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="kc">False</span><span class="p">,</span> <span class="p">{</span><span class="o">-</span><span class="mi">4</span> <span class="o">-&gt;</span> <span class="n">Blue</span><span class="p">}}],</span> <span class="p">{</span><span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span>
+   <span class="mi">40</span><span class="o">*</span><span class="n">zR</span><span class="o">/</span><span class="mi">800</span><span class="p">,</span> <span class="n">Appearance</span> <span class="o">-&gt;</span> <span class="s2">&quot;Labeled&quot;</span><span class="p">}],</span>
+ <span class="n">Permissions</span> <span class="o">-&gt;</span> <span class="s2">&quot;Public&quot;</span><span class="p">]</span>
+<span class="p">(</span><span class="o">*=================================================================================================*</span><span class="p">)</span>
+<span class="n">CloudDeploy</span><span class="p">[</span>
+ <span class="n">Manipulate</span><span class="p">[</span><span class="n">Column</span><span class="p">[{</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Spot Size&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">Plot3D</span><span class="p">[</span><span class="n">Int3D</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},</span> <span class="p">{</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},</span>
+     <span class="n">ImageSize</span> <span class="o">-&gt;</span> <span class="n">Medium</span><span class="p">,</span>
+     <span class="n">PlotRange</span> <span class="o">-&gt;</span> <span class="p">{{</span><span class="o">-</span><span class="n">axis</span><span class="p">,</span> <span class="n">axis</span><span class="p">},</span> <span class="p">{</span><span class="o">-</span><span class="n">axis</span><span class="p">,</span> <span class="n">axis</span><span class="p">},</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span>
+        <span class="mi">1</span><span class="o">*</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="n">Pi</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]}},</span> <span class="n">PlotPoints</span> <span class="o">-&gt;</span> <span class="mi">30</span><span class="p">,</span>
+     <span class="n">ColorFunction</span> <span class="o">-&gt;</span> <span class="s2">&quot;Rainbow&quot;</span><span class="p">,</span> <span class="n">PlotLegends</span> <span class="o">-&gt;</span> <span class="n">Automatic</span><span class="p">,</span>
+     <span class="n">Mesh</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Knife Edge Scan&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">Plot</span><span class="p">[</span><span class="n">P</span><span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]},</span> <span class="n">ImageSize</span> <span class="o">-&gt;</span> <span class="n">Medium</span><span class="p">,</span>
+     <span class="n">PlotRange</span> <span class="o">-&gt;</span> <span class="p">{{</span><span class="o">-</span><span class="n">axis</span><span class="p">,</span> <span class="n">axis</span><span class="p">},</span> <span class="n">Automatic</span><span class="p">}],</span>
+    <span class="n">Style</span><span class="p">[</span> <span class="s2">&quot;&quot;</span><span class="p">],</span> <span class="n">Style</span><span class="p">[</span> <span class="s2">&quot;&quot;</span><span class="p">],</span>
+    <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span> <span class="n">Style</span><span class="p">[</span><span class="s2">&quot;x          Intensity&quot;</span><span class="p">,</span> <span class="n">Bold</span><span class="p">],</span>
+    <span class="n">Grid</span><span class="p">[</span><span class="n">Table</span><span class="p">[{</span><span class="n">x</span><span class="p">,</span> <span class="n">P</span> <span class="p">[</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">]},</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="mi">6</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">z</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">}]]}],</span>
+  <span class="p">{{</span><span class="n">s</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="s2">&quot;Number of Samples&quot;</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="mi">800</span><span class="p">}},</span> <span class="p">{</span><span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">zR</span><span class="p">,</span> <span class="mi">40</span><span class="o">*</span><span class="n">zR</span><span class="o">/</span><span class="mi">800</span><span class="p">,</span>
+   <span class="n">Appearance</span> <span class="o">-&gt;</span> <span class="s2">&quot;Labeled&quot;</span><span class="p">},</span> <span class="p">{{</span><span class="n">axis</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="s2">&quot;Spot Size Axis Range&quot;</span><span class="p">}</span> <span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="mi">125</span><span class="p">,</span> <span class="n">Appearance</span> <span class="o">-&gt;</span> <span class="s2">&quot;Labeled&quot;</span><span class="p">}]</span>
+ <span class="p">,</span> <span class="n">Permissions</span> <span class="o">-&gt;</span> <span class="s2">&quot;Public&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Guide_Gaussian_Beam_Activity_Page.html"
+       title="previous chapter">← Activity</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.0 with <a href="https://github.com/romnnn/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

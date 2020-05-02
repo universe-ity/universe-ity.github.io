@@ -1,0 +1,160 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Gaussian Beams Theory Page.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "t8OhAv-stdWZ",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Theory\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_ygBA2-I1mfK",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Gaussian beam, beam waist, and diffraction"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "d8YvZPWjIGht",
+        "colab_type": "text"
+      },
+      "source": [
+        "As the Gaussian beam propagates in the longitudinal direction (chosen as z-direction) it will diffract. This of course means that the amplitude of the beams intensity profile and beam width will change and thus, are z-dependent.\n",
+        "\n",
+        "The intensity profile of the Gaussian beam has the following form,\n",
+        "\n",
+        "\\begin{align} g(x, z) = \\frac{\\sqrt{2\\pi}}{w(z)}\\, e^{-2\\frac{x^2}{w(z)^2}}\\end{align}\n",
+        "\n",
+        "where the waist size $w(z)$ is given by\n",
+        "\n",
+        "\\begin{align}w(z) = w_0 \\sqrt{1 + \\left(\\frac{z}{z_R}\\right)^2} \\end{align}\n",
+        "\n",
+        "The Raleigh length is $z_R = \\frac{\\pi w_0^2}{\\lambda} $ where $w_0$ is the minimum beam waist parameter (set by instructor). Note that the wavelength parameter $\\lambda$ is set by the instructor allowing for the diffraction length to be stretched or compressed as desired."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Q2yRW57UIA_B",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Knife edge scan"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "o4-bAAWeHpPB",
+        "colab_type": "text"
+      },
+      "source": [
+        "One method of determining the intensity profile of a beam of light experimentally, is to perform a knife edge scan. A knife edge scan involves taking something with a sharp edge like a knife or razer blade and translating the edge (in the direction perpendicular to the edge and beam) across the beam so that the edge cuts through the beam until the edge completely blocks the beam. Below is a schematic/drawing ([source](http://imagebank.osa.org/getImage.xqy?img=cCF6ekAuZnVsbCxvZS0xNS0xMC02MzY3LWcwMDE&article=oe-15-10-6367-g001))\n",
+        "\n",
+        "![Aberration](https://drive.google.com/uc?export=view&id=1H8ydG0gW8M5uLZgifzdC6zbCNqtVofot)\n",
+        "\n",
+        "As the edge is translated, the power meter measures the intensity of all the light that is not blocked by the edge. This amounts to the sum of the intensity of the beam at each position in the transverse direction ie $x$-direction (remember, longitudinal direction is the beam propogation direction). In other words, what is measured is the integral of the Gaussian intensity profile upto the x-position where the edge starts (blocking the light). \n",
+        "\n",
+        "\n",
+        "The integral of Gaussian intensity profile at the beginning of this section is,\n",
+        "\n",
+        "\\begin{align}k(x, z) = \\frac{1}{2}\\left[ 1+ erf \\left(\\sqrt{2}\\frac{x}{w(z)}\\right)  \\right]\\end{align}\n",
+        "\n",
+        "Since taking the derivative should give back the original Gaussian, then obtaining the intensity profile from the knife edge scan data (power measurements) should amount to just determing the slope at each x-position. Numerically, one can use a differencing method to obtain the slope at each point. \n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Uw3FRBFW0_z_",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Numeric differentiation"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "s57aLcg0P8iq",
+        "colab_type": "text"
+      },
+      "source": [
+        "Since it is expected that taking the derviative of the knife edge scan of a Gaussian beam will produce a Gaussian and since a gaussian is symmetric, it may be best to choose the central differencing method of the three simplest differencing schemes (forward, backward, central) as the way to obtain the slope of the knife edge scan at the various x-positions. Nevertheless, the three schemes will be described below"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IgJ1VOp6QJ0q",
+        "colab_type": "text"
+      },
+      "source": [
+        "#### Forward differencing method\n",
+        "\n",
+        "\\begin{align} f'(x_i) = \\frac{d}{dx}\\left[f(x)\\right]_{x=x_i} &= \\lim_{(x_{i+1} - x_i)\\rightarrow \\, 0} \n",
+        "\\ \\frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i}\\\\ \\notag \\\\\n",
+        "&\\approx\n",
+        "\\ \\frac{f(x_{i+1}) - f(x_{i})}{x_{i+1} - x_{i}}\n",
+        "\\end{align}"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hP62ukfhVJe2",
+        "colab_type": "text"
+      },
+      "source": [
+        "#### Backward differencing method\n",
+        "\n",
+        "\\begin{align} f'(x_i) = \\frac{d}{dx}\\left[f(x)\\right]_{x=x_i} &= \\lim_{(x_{i} - x_{i-1})\\rightarrow \\, 0} \n",
+        "\\ \\frac{f(x_{i}) - f(x_{i-1})}{x_{i} - x_{i-1}}\\\\ \\notag \\\\\n",
+        "&\\approx \n",
+        "\\ \\frac{f(x_{i}) - f(x_{i-1})}{x_{i} - x_{i-1}}\n",
+        "\\end{align}"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VQMQnc-OVEW1",
+        "colab_type": "text"
+      },
+      "source": [
+        "#### Central differencing method\n",
+        "\n",
+        "\\begin{align} f'(x_i) = \\frac{d}{dx}\\left[f(x)\\right]_{x=x_i} &= \\lim_{(x_{i+1} - x_{i-1})\\rightarrow \\, 0} \n",
+        "\\ \\frac{f(x_{i+1}) - f(x_{i-1})}{2(x_{i+1} - x_{i-1})}\\\\ \\notag \\\\\n",
+        "&\\approx\n",
+        "\\ \\frac{f(x_{i+1}) - f(x_{i-1})}{2(x_{i+1} - x_{i-1})}\n",
+        "\\end{align}\n",
+        "\n",
+        "The approximations of the derivatives above are obtained by simply dropping the limits. These approximations get better as  the difference in the denominator  is smaller. In other words, the smaller the separation between the x-positions where measurements were taken, the closer the approximation is to the analytical derivative.\n",
+        "\n",
+        "It is commonly noted, when introducting the centered derivative (sometimes refered to as central differencing), that it is equivalent to the average of the forward derivative with the backward derivative"
+      ]
+    }
+  ]
+}
