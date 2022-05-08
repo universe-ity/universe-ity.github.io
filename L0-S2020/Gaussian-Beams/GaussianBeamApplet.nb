@@ -1,0 +1,132 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5051,        123]
+NotebookOptionsPosition[      4830,        112]
+NotebookOutlinePosition[      5098,        125]
+CellTagsIndexPosition[      5055,        122]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`axis$$ = 125, $CellContext`s$$ = 
+    800, $CellContext`z$$ = -3141.5926535897934`, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`s$$], 800, "Number of Samples"}, {2, 4, 5, 10, 40, 
+      200, 400, 800}}, {
+      Hold[$CellContext`z$$], -3141.5926535897934`, 3141.5926535897934`, 
+      7.853981633974483}, {{
+       Hold[$CellContext`axis$$], 125, "Spot Size Axis Range"}, 0, 125}}, 
+    Typeset`size$$ = {432., {899.5, 905.5}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`axis$$ = 125, $CellContext`s$$ = 
+        800, $CellContext`z$$ = -3141.5926535897934`}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Style["Spot Size", Bold], 
+         Plot3D[
+          $CellContext`Int3D[$CellContext`z$$], {$CellContext`x, (-2) \
+$CellContext`w[$CellContext`z$$], 
+           2 $CellContext`w[$CellContext`z$$]}, {$CellContext`y, (-2) \
+$CellContext`w[$CellContext`z$$], 2 $CellContext`w[$CellContext`z$$]}, 
+          ImageSize -> Medium, 
+          PlotRange -> {{-$CellContext`axis$$, $CellContext`axis$$}, \
+{-$CellContext`axis$$, $CellContext`axis$$}, {
+            0, 1 (Sqrt[2/Pi]/$CellContext`w[$CellContext`z$$])}}, PlotPoints -> 
+          30, ColorFunction -> "Rainbow", PlotLegends -> Automatic, Mesh -> 
+          None], 
+         Style["Knife Edge Scan", Bold], 
+         Plot[
+          $CellContext`P[$CellContext`z$$, $CellContext`x], {$CellContext`x, \
+(-2) $CellContext`w[$CellContext`z$$], 2 $CellContext`w[$CellContext`z$$]}, 
+          ImageSize -> Medium, 
+          PlotRange -> {{-$CellContext`axis$$, $CellContext`axis$$}, 
+            Automatic}], 
+         Style[""], 
+         Style[""], 
+         Style["Data", Bold], 
+         Style["x          Intensity", Bold], 
+         Grid[
+          Table[{$CellContext`x, 
+            $CellContext`P[$CellContext`z$$, $CellContext`x]}, \
+{$CellContext`x, (-2) $CellContext`w[$CellContext`z$$], 
+            2 $CellContext`w[$CellContext`z$$], 
+            6 ($CellContext`w[$CellContext`z$$]/100)}]]}], 
+      "Specifications" :> {{{$CellContext`s$$, 800, "Number of Samples"}, {2, 
+         4, 5, 10, 40, 200, 400, 
+         800}}, {$CellContext`z$$, -3141.5926535897934`, 3141.5926535897934`, 
+         7.853981633974483, Appearance -> 
+         "Labeled"}, {{$CellContext`axis$$, 125, "Spot Size Axis Range"}, 0, 
+         125, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{483., {976., 982.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`Int3D[
+         Pattern[$CellContext`z, 
+          Blank[]]] := 
+       1 (Sqrt[2/Pi]/$CellContext`w[$CellContext`z]) 
+        Exp[(-2) (($CellContext`x^2 + \
+$CellContext`y^2)/$CellContext`w[$CellContext`z]^2)], $CellContext`w[
+         Pattern[$CellContext`z, 
+          Blank[]]] := $CellContext`w0 
+        Sqrt[1 + ($CellContext`z/$CellContext`zR)^2], $CellContext`w0 = 
+       5, $CellContext`zR = 157.07963267948966`, $CellContext`P[
+         Pattern[$CellContext`z, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]]] = (1 + 
+         Erf[(Sqrt[2] $CellContext`x)/(5 
+           Sqrt[1 + 0.00004052847345693511 $CellContext`z^2])])/2}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ShowCellBracket->False,
+ TextAlignment->Center]
+},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (March 18, 2020)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4268, 90, 70, "Output",ExpressionUUID->"137d43c0-a8b6-45b7-8b90-73a7e6c2f9c6"]
+}
+]
+*)
+
+(* End of internal cache information *)
