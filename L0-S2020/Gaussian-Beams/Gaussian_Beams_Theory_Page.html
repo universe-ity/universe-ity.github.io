@@ -173,7 +173,7 @@
 <p>Since it is expected that taking the derviative of the knife edge scan of a Gaussian beam will produce a Gaussian and since a gaussian is symmetric, it may be best to choose the central differencing method of the three simplest differencing schemes (forward, backward, central) as the way to obtain the slope of the knife edge scan at the various x-positions. Nevertheless, the three schemes will be described below</p>
 <div class="section" id="Forward-differencing-method">
 <h3>Forward differencing method<a class="headerlink" href="#Forward-differencing-method" title="Permalink to this headline">¶</a></h3>
-<p><span class="math">\begin{align} f'(x_i) = \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i+1} - x_i)\rightarrow \, 0}
+<p><span class="math">\begin{align} \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i+1} - x_i)\rightarrow \, 0}
 \ \frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i}\\ \notag \\
 &\approx
 \ \frac{f(x_{i+1}) - f(x_{i})}{x_{i+1} - x_{i}}
@@ -181,7 +181,7 @@
 </div>
 <div class="section" id="Backward-differencing-method">
 <h3>Backward differencing method<a class="headerlink" href="#Backward-differencing-method" title="Permalink to this headline">¶</a></h3>
-<p><span class="math">\begin{align} f'(x_i) = \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i} - x_{i-1})\rightarrow \, 0}
+<p><span class="math">\begin{align} \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i} - x_{i-1})\rightarrow \, 0}
 \ \frac{f(x_{i}) - f(x_{i-1})}{x_{i} - x_{i-1}}\\ \notag \\
 &\approx
 \ \frac{f(x_{i}) - f(x_{i-1})}{x_{i} - x_{i-1}}
@@ -189,7 +189,7 @@
 </div>
 <div class="section" id="Central-differencing-method">
 <h3>Central differencing method<a class="headerlink" href="#Central-differencing-method" title="Permalink to this headline">¶</a></h3>
-<p><span class="math">\begin{align} f'(x_i) = \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i+1} - x_{i-1})\rightarrow \, 0}
+<p><span class="math">\begin{align} \frac{d}{dx}\left[f(x)\right]_{x=x_i} &= \lim_{(x_{i+1} - x_{i-1})\rightarrow \, 0}
 \ \frac{f(x_{i+1}) - f(x_{i-1})}{2(x_{i+1} - x_{i-1})}\\ \notag \\
 &\approx
 \ \frac{f(x_{i+1}) - f(x_{i-1})}{2(x_{i+1} - x_{i-1})}
